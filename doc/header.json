@@ -1,0 +1,718 @@
+[
+    {
+        "endIndex": 1,
+        "sectionBreak": {
+            "sectionStyle": {
+                "columnSeparatorStyle": "NONE",
+                "contentDirection": "LEFT_TO_RIGHT",
+                "sectionType": "CONTINUOUS"
+            }
+        }
+    },
+    {
+        "startIndex": 1,
+        "endIndex": 107,
+        "paragraph": {
+            "elements": [
+                {
+                    "startIndex": 1,
+                    "endIndex": 13,
+                    "textRun": {
+                        "content": "Abhinav Jain",
+                        "textStyle": {
+                            "bold": true,
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.23529412,
+                                        "green": 0.47058824,
+                                        "blue": 0.84705883
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 22,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 13,
+                    "endIndex": 14,
+                    "textRun": {
+                        "content": " ",
+                        "textStyle": {
+                            "bold": true,
+                            "fontSize": {
+                                "magnitude": 22,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 14,
+                    "endIndex": 15,
+                    "textRun": {
+                        "content": " ",
+                        "textStyle": {
+                            "fontSize": {
+                                "magnitude": 22,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 15,
+                    "endIndex": 16,
+                    "textRun": {
+                        "content": "\t",
+                        "textStyle": {
+                            "fontSize": {
+                                "magnitude": 8.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 16,
+                    "endIndex": 37,
+                    "textRun": {
+                        "content": "a252jain@uwaterloo.ca",
+                        "textStyle": {
+                            "underline": true,
+                            "fontSize": {
+                                "magnitude": 8.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            },
+                            "link": {
+                                "url": "mailto:a252jain@uwaterloo.ca"
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 37,
+                    "endIndex": 40,
+                    "textRun": {
+                        "content": " \u2022 ",
+                        "textStyle": {
+                            "fontSize": {
+                                "magnitude": 8.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 40,
+                    "endIndex": 59,
+                    "textRun": {
+                        "content": "abhij2706.github.io",
+                        "textStyle": {
+                            "underline": true,
+                            "fontSize": {
+                                "magnitude": 8.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            },
+                            "link": {
+                                "url": "https://abhij2706.github.io"
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 59,
+                    "endIndex": 62,
+                    "textRun": {
+                        "content": " \u2022 ",
+                        "textStyle": {
+                            "fontSize": {
+                                "magnitude": 8.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 62,
+                    "endIndex": 88,
+                    "textRun": {
+                        "content": "linkedin.com/in/abhij2706/",
+                        "textStyle": {
+                            "underline": true,
+                            "fontSize": {
+                                "magnitude": 8.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            },
+                            "link": {
+                                "url": "https://www.linkedin.com/in/abhij2706/"
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 88,
+                    "endIndex": 89,
+                    "textRun": {
+                        "content": " ",
+                        "textStyle": {
+                            "fontSize": {
+                                "magnitude": 1,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 89,
+                    "endIndex": 91,
+                    "textRun": {
+                        "content": "\u2022 ",
+                        "textStyle": {
+                            "fontSize": {
+                                "magnitude": 8.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 91,
+                    "endIndex": 106,
+                    "textRun": {
+                        "content": "+1 343 558 2078",
+                        "textStyle": {
+                            "underline": true,
+                            "fontSize": {
+                                "magnitude": 8.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            },
+                            "link": {
+                                "url": "tel:+13435582078"
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 106,
+                    "endIndex": 107,
+                    "textRun": {
+                        "content": "\n",
+                        "textStyle": {
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.4,
+                                        "green": 0.4,
+                                        "blue": 0.4
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 3,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                }
+            ],
+            "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "alignment": "START",
+                "direction": "LEFT_TO_RIGHT",
+                "tabStops": [
+                    {
+                        "offset": {
+                            "magnitude": 559.3582677165355,
+                            "unit": "PT"
+                        },
+                        "alignment": "END"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "startIndex": 107,
+        "endIndex": 108,
+        "paragraph": {
+            "elements": [
+                {
+                    "startIndex": 107,
+                    "endIndex": 108,
+                    "textRun": {
+                        "content": "\n",
+                        "textStyle": {
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.4,
+                                        "green": 0.4,
+                                        "blue": 0.4
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 4.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                }
+            ],
+            "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "tabStops": [
+                    {
+                        "offset": {
+                            "magnitude": 559.3582677165355,
+                            "unit": "PT"
+                        },
+                        "alignment": "END"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "startIndex": 108,
+        "endIndex": 196,
+        "paragraph": {
+            "elements": [
+                {
+                    "startIndex": 108,
+                    "endIndex": 118,
+                    "textRun": {
+                        "content": "Languages:",
+                        "textStyle": {
+                            "bold": true,
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.2627451,
+                                        "green": 0.2627451,
+                                        "blue": 0.2627451
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 10,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 118,
+                    "endIndex": 119,
+                    "textRun": {
+                        "content": " ",
+                        "textStyle": {
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.2627451,
+                                        "green": 0.2627451,
+                                        "blue": 0.2627451
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 10,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 119,
+                    "endIndex": 196,
+                    "textRun": {
+                        "content": "Python, C, C++, Typescript, Javascript, Kotlin, Swift, Bash, SQL, Terraform.\n",
+                        "textStyle": {
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.2627451,
+                                        "green": 0.2627451,
+                                        "blue": 0.2627451
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 10,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                }
+            ],
+            "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "indentFirstLine": {
+                    "unit": "PT"
+                },
+                "indentStart": {
+                    "unit": "PT"
+                }
+            }
+        }
+    },
+    {
+        "startIndex": 196,
+        "endIndex": 314,
+        "paragraph": {
+            "elements": [
+                {
+                    "startIndex": 196,
+                    "endIndex": 209,
+                    "textRun": {
+                        "content": "Technologies:",
+                        "textStyle": {
+                            "bold": true,
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.2627451,
+                                        "green": 0.2627451,
+                                        "blue": 0.2627451
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 10,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 209,
+                    "endIndex": 314,
+                    "textRun": {
+                        "content": " Android, Linux, Docker, Jenkins, NumPy, Pandas, TensorFlow, GraphQL, AWS, React.js, CoreML, Kubernetes.\n",
+                        "textStyle": {
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.2627451,
+                                        "green": 0.2627451,
+                                        "blue": 0.2627451
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 10,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                }
+            ],
+            "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "indentFirstLine": {
+                    "unit": "PT"
+                },
+                "indentStart": {
+                    "unit": "PT"
+                }
+            }
+        }
+    },
+    {
+        "startIndex": 314,
+        "endIndex": 431,
+        "paragraph": {
+            "elements": [
+                {
+                    "startIndex": 314,
+                    "endIndex": 323,
+                    "textRun": {
+                        "content": "Domains: ",
+                        "textStyle": {
+                            "bold": true,
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.2627451,
+                                        "green": 0.2627451,
+                                        "blue": 0.2627451
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 10,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 323,
+                    "endIndex": 398,
+                    "textRun": {
+                        "content": "Software Engineering, ML Engineering, Data Engineering, Embedded Software, ",
+                        "textStyle": {
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.2627451,
+                                        "green": 0.2627451,
+                                        "blue": 0.2627451
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 10,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                },
+                {
+                    "startIndex": 398,
+                    "endIndex": 431,
+                    "textRun": {
+                        "content": "Test Automation, AI/ML Research.\n",
+                        "textStyle": {
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.2627451,
+                                        "green": 0.2627451,
+                                        "blue": 0.2627451
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 10,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                }
+            ],
+            "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "indentFirstLine": {
+                    "unit": "PT"
+                },
+                "indentStart": {
+                    "unit": "PT"
+                }
+            }
+        }
+    },
+    {
+        "startIndex": 431,
+        "endIndex": 432,
+        "paragraph": {
+            "elements": [
+                {
+                    "startIndex": 431,
+                    "endIndex": 432,
+                    "textRun": {
+                        "content": "\n",
+                        "textStyle": {
+                            "fontSize": {
+                                "magnitude": 4.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                }
+            ],
+            "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "alignment": "END",
+                "direction": "LEFT_TO_RIGHT"
+            }
+        }
+    },
+    {
+        "startIndex": 432,
+        "endIndex": 443,
+        "paragraph": {
+            "elements": [
+                {
+                    "startIndex": 432,
+                    "endIndex": 443,
+                    "textRun": {
+                        "content": "Experience\n",
+                        "textStyle": {
+                            "bold": true,
+                            "foregroundColor": {
+                                "color": {
+                                    "rgbColor": {
+                                        "red": 0.23529412,
+                                        "green": 0.47058824,
+                                        "blue": 0.84705883
+                                    }
+                                }
+                            },
+                            "fontSize": {
+                                "magnitude": 13,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                }
+            ],
+            "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT",
+                "borderBottom": {
+                    "color": {
+                        "color": {
+                            "rgbColor": {}
+                        }
+                    },
+                    "width": {
+                        "magnitude": 1,
+                        "unit": "PT"
+                    },
+                    "padding": {
+                        "magnitude": 2,
+                        "unit": "PT"
+                    },
+                    "dashStyle": "SOLID"
+                }
+            }
+        }
+    },
+    {
+        "startIndex": 443,
+        "endIndex": 444,
+        "paragraph": {
+            "elements": [
+                {
+                    "startIndex": 443,
+                    "endIndex": 444,
+                    "textRun": {
+                        "content": "\n",
+                        "textStyle": {
+                            "underline": true,
+                            "fontSize": {
+                                "magnitude": 5.5,
+                                "unit": "PT"
+                            },
+                            "weightedFontFamily": {
+                                "fontFamily": "Figtree",
+                                "weight": 400
+                            }
+                        }
+                    }
+                }
+            ],
+            "paragraphStyle": {
+                "namedStyleType": "NORMAL_TEXT",
+                "direction": "LEFT_TO_RIGHT"
+            }
+        }
+    }
+]

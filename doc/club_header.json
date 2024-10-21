@@ -1,0 +1,31 @@
+
+{
+    "startIndex": 3,
+    "endIndex": 91,
+    "paragraph": {
+        "elements": [
+            {
+                "startIndex": 3,
+                "endIndex": 91,
+                "textRun": {
+                    "content": "Amazon | Software Development Engineering Intern | Toronto, ON | May 2024 \u2011 August 2024",
+                    "textStyle": {
+                        "bold": true,
+                        "fontSize": {
+                            "magnitude": 11.5,
+                            "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                            "fontFamily": "Figtree",
+                            "weight": 400
+                        }
+                    }
+                }
+            }
+        ],
+        "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT"
+        }
+    }
+}

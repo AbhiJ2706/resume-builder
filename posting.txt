@@ -1,0 +1,20 @@
+Minimum qualifications:
+
+    Bachelor's degree in Computer Science, a similar technical field of study, or equivalent practical experience.
+    Experience working with data structures or algorithms during coursework/projects, research, internships, or practical experience in school or work (e.g., open-source coding).
+    Experience with software development in one or more programming languages (e.g., Python, C, C++, Java, JavaScript).
+
+Preferred qualifications:
+
+    Master's degree in Computer Science, or a related technical field.
+    Experience working with one or more of the following: web or mobile application development, Unix/Linux environments, distributed and parallel systems, machine learning, information retrieval, natural language processing, networking, developing large software systems, or security software development.
+    Experience developing accessible technologies.
+    Ability to learn other coding languages as needed.
+
+About The Job
+
+Google's software engineers develop the next-generation technologies that change how billions of users connect, explore, and interact with information and one another. Our products need to handle information at massive scale, and extend well beyond web search. We're looking for engineers who bring fresh ideas from all areas, including information retrieval, distributed computing, large-scale system design, networking and data storage, security, artificial intelligence, natural language processing, UI design and mobile; the list goes on and is growing every day. As a software engineer, you will work on a specific project critical to Google’s needs with opportunities to switch teams and projects as you and our fast-paced business grow and evolve. We need our engineers to be versatile, display leadership qualities and be enthusiastic to take on new problems across the full-stack as we continue to push technology forward.
+
+As a key member of a small and versatile team, you design, test, deploy and maintain software solutions.
+
+Google is an engineering company at heart. We hire people with a broad set of technical skills who are ready to take on some of technology's greatest challenges and make an impact on users around the world. At Google, engineers not only revolutionize search, they routinely work on scalability and storage solutions, large-scale applications and entirely new platforms for developers around the world. From Google Ads to Chrome, Android to YouTube, social to local, Google engineers are changing the world one technological achievement after another.

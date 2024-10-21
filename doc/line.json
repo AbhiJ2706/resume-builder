@@ -1,0 +1,30 @@
+{
+    "startIndex": 3521,
+    "endIndex": 3522,
+    "paragraph": {
+        "elements": [
+            {
+                "startIndex": 3521,
+                "endIndex": 3522,
+                "textRun": {
+                    "content": "\n",
+                    "textStyle": {
+                        "underline": true,
+                        "fontSize": {
+                            "magnitude": 5.5,
+                            "unit": "PT"
+                        },
+                        "weightedFontFamily": {
+                            "fontFamily": "Figtree",
+                            "weight": 400
+                        }
+                    }
+                }
+            }
+        ],
+        "paragraphStyle": {
+            "namedStyleType": "NORMAL_TEXT",
+            "direction": "LEFT_TO_RIGHT"
+        }
+    }
+}

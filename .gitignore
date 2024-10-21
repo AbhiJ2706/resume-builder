@@ -1,3 +1,11 @@
+# added by me
+token.json
+credentials.json
+i_commands.json
+u_commands.json
+resume_doc.json
+complete_resume_doc.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
