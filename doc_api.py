@@ -12,7 +12,7 @@ from googleapiclient.errors import HttpError
 SCOPES = ["https://www.googleapis.com/auth/documents"]
 
 
-def main(fetch=False, document_id=None):
+def main(fetch=False, document_id=None, company=None):
     
     creds = None
     
@@ -43,7 +43,7 @@ def main(fetch=False, document_id=None):
                 f.write(json.dumps(document, indent=4))
         
         else:
-            document = service.documents().create(body={"title":"test"}).execute()
+            document = service.documents().create(body={"title" : f"abhinav_jain_resume_{company}"}).execute()
 
             print(document["documentId"])
             
@@ -66,6 +66,15 @@ if __name__ == "__main__":
         prog='Google docs API client',
         description='Builds/fetches documents',
     )
+
+    parser.add_argument(
+        "--company", 
+        "-c", 
+        type=bool, 
+        required=False, 
+        help="Company which owns the posting."
+    )
+
     parser.add_argument(
         "--fetch", 
         "-f", 
@@ -89,4 +98,6 @@ if __name__ == "__main__":
             parser.error('id is required when fetching.')
         main(args.fetch, args.id)
     else:
-        main()
+        if not args.company:
+            parser.error('company is required when generating.')
+        main(company=args.company)
