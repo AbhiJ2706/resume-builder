@@ -1,6 +1,68 @@
 import json
 
 
+def build_header(languages, technologies, index):
+    with open("doc/header.json", "r") as header:
+        header_json = json.loads(header.read())
+
+        index = 119
+
+        languages_string = f"{', '.join(languages)}.\n"
+
+        technologies_string = f"{', '.join(technologies)}.\n"
+
+        header_json[3]["paragraph"]["elements"][2]["startIndex"] = index
+        index += len(languages_string)
+        header_json[3]["paragraph"]["elements"][2]["endIndex"] = index
+        header_json[3]["endIndex"] = index
+
+        header_json[4]["startIndex"] = index
+        header_json[4]["paragraph"]["elements"][0]["startIndex"] = index
+        index += 14
+        header_json[4]["paragraph"]["elements"][0]["endIndex"] = index
+
+        header_json[4]["paragraph"]["elements"][1]["startIndex"] = index
+        index += len(technologies_string)
+        header_json[4]["paragraph"]["elements"][1]["endIndex"] = index
+        header_json[4]["endIndex"] = index
+
+        header_json[5]["startIndex"] = index
+        header_json[5]["paragraph"]["elements"][0]["startIndex"] = index
+        index += 9
+        header_json[5]["paragraph"]["elements"][0]["endIndex"] = index
+
+        header_json[5]["paragraph"]["elements"][1]["startIndex"] = index
+        index += 75
+        header_json[5]["paragraph"]["elements"][1]["endIndex"] = index
+
+        header_json[5]["paragraph"]["elements"][2]["startIndex"] = index
+        index += 34
+        header_json[5]["paragraph"]["elements"][2]["endIndex"] = index
+        header_json[5]["endIndex"] = index
+
+        header_json[6]["startIndex"] = index - 1
+        header_json[6]["paragraph"]["elements"][0]["startIndex"] = index - 1
+        header_json[6]["paragraph"]["elements"][0]["endIndex"] = index
+        header_json[6]["endIndex"] = index
+
+        header_json[7]["startIndex"] = index
+        header_json[7]["paragraph"]["elements"][0]["startIndex"] = index
+        index += 12
+        header_json[7]["paragraph"]["elements"][0]["endIndex"] = index
+        header_json[7]["endIndex"] = index
+
+        header_json[8]["startIndex"] = index - 1
+        header_json[8]["paragraph"]["elements"][0]["startIndex"] = index - 1
+        header_json[8]["paragraph"]["elements"][0]["endIndex"] = index
+        header_json[8]["endIndex"] = index
+
+        header_json[3]["paragraph"]["elements"][2]["textRun"]["content"] = languages_string
+        header_json[4]["paragraph"]["elements"][1]["textRun"]["content"] = technologies_string
+
+        return index, header_json
+
+
+
 def build_title(experience, index):
     with open("doc/job_header.json", "r") as job_title:
         job_header_json = json.loads(job_title.read())
@@ -157,17 +219,18 @@ def build_education(index):
 
 
 def build_doc():
-    with open("doc/header.json", "r") as header, \
-            open("doc/skeleton.json", "r") as skeleton, \
+    with open("doc/skeleton.json", "r") as skeleton, \
             open("resume_result.json", "r") as resume, \
             open("resume_doc.json", "w+") as final_doc:
-        header_json = json.loads(header.read())
         doc = json.loads(skeleton.read())
         resume_json = json.loads(resume.read())
 
-        index = header_json[-1]["endIndex"]
+        index = 1
 
-        content = header_json
+        index, content = build_header(resume_json["languages"], resume_json["frameworks"], index)
+
+        # content = json.loads(open("doc/header.json", "r").read())
+        # index = content[-1]["endIndex"]
 
         for experience in resume_json["experience"]:
             index, title, summary = build_title(experience, index)

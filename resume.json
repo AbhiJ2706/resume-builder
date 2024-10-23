@@ -12,6 +12,16 @@
                 "Terraform",
                 "SQL"
             ],
+            "languages": [
+                "Python [Required]",
+                "Terraform",
+                "SQL"
+            ],
+            "frameworks": [
+                "Kubernetes",
+                "DataDog",
+                "Snowflake"
+            ],
             "description": [
                 "Extracting key insights from conversation transcripts. Streamlining and securing video processing infrastructure."
             ]
@@ -28,6 +38,15 @@
                 "GraphQL",
                 "AWS"
             ],
+            "languages": [
+                "Kotlin [Required]",
+                "Typescript [Required]"
+            ],
+            "frameworks": [
+                "GraphQL",
+                "AWS",
+                "React.js"
+            ],
             "description": [
                 "Designed an LLM-based assistant to convert language to database queries, accelerating data search times by 10x.",
                 "Created an app to send advertiser leads to sales managers through Slack, improving lead retrieval for 1000+ people.",
@@ -42,6 +61,12 @@
             "duration": "January 2024 - April 2024",
             "technologies": [
                 "Swift",
+                "CoreML"
+            ],
+            "languages": [
+                "Swift"
+            ],
+            "frameworks": [
                 "CoreML"
             ],
             "description": [
@@ -60,6 +85,16 @@
                 "NumPy",
                 "Pandas"
             ],
+            "languages": [
+                "Python [Required]",
+                "Bash [Required]"
+            ],
+            "frameworks": [
+                "NumPy",
+                "Pandas",
+                "Docker",
+                "Jenkins"
+            ],
             "description": [
                 "Led development of a software profiling pipeline for analyzing the performance of CNNs running on Snapdragon.",
                 "Increased speed of analysis tools by 500+%. Added reduction methods to accelerate preprocessing of large datasets.",
@@ -70,7 +105,7 @@
         {
             "company": "Qualcomm",
             "location": "Toronto, ON",
-            "position": "Embedded AI Development Intern",
+            "position": "Embedded Software Development Intern",
             "domain": "Embedded Software",
             "duration": "January 2023 - August 2023",
             "technologies": [
@@ -78,6 +113,18 @@
                 "C++",
                 "Android",
                 "Jenkins"
+            ],
+            "languages": [
+                "C",
+                "C++ [Required]",
+                "Python",
+                "Bash"
+            ],
+            "frameworks": [
+                "Android",
+                "Jenkins",
+                "Linux",
+                "Docker"
             ],
             "description": [
                 "Optimized Inter-Process Communication (IPC) for an embedded framework that accelerates image processing.",
@@ -100,6 +147,16 @@
                 "ElasticSearch",
                 "Linux"
             ],
+            "languages": [
+                "Python"
+            ],
+            "frameworks": [
+                "ElasticSearch",
+                "NumPy",
+                "Linux",
+                "Docker",
+                "Pandas"
+            ],
             "description": [
                 "Implemented, A/B tested, and deployed an ML model to recommend code reviewers for pull requests, for 3600+ users.",
                 "Optimized Natural Language Processing (NLP) pipelines for customer service chatbots, increasing accuracy to 99%.",
@@ -119,11 +176,23 @@
                 "TensorFlow",
                 "InfluxDB"
             ],
+            "languages": [
+                "Python [Required]",
+                "SQL"
+            ],
+            "frameworks": [
+                "TensorFlow",
+                "InfluxDB",
+                "NumPy",
+                "Linux",
+                "Grafana",
+                "Pandas"
+            ],
             "description": [
                 "Developed a Recurrent Neural Network (RNN)-based model to detect anomalies in router telemetry data.",
                 "Wrote automated unit tests for 5+ SRv6 features, ensuring correctness and scalability across network topologies",
                 "Constructed RESTful APIs to collect and preprocess 60+ SRv6 telemetry metrics using YANG.",
-                "Automated the configuration and simluation of router topologies and simulations for test scenarios."
+                "Wrote scripts to automate the configuration of router topologies and simulations for test scenarios."
             ]
         }
     ],

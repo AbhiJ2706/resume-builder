@@ -43,7 +43,7 @@ def main(fetch=False, document_id=None, company=None):
                 f.write(json.dumps(document, indent=4))
         
         else:
-            document = service.documents().create(body={"title" : f"abhinav_jain_resume_{company}"}).execute()
+            document = service.documents().create(body={"title" : f"abhinav_jain_resume_{company.lower()}"}).execute()
 
             print(document["documentId"])
             
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--company", 
         "-c", 
-        type=bool, 
+        type=str, 
         required=False, 
         help="Company which owns the posting."
     )

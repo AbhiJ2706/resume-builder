@@ -439,9 +439,9 @@
             "elements": [
                 {
                     "startIndex": 196,
-                    "endIndex": 209,
+                    "endIndex": 210,
                     "textRun": {
-                        "content": "Technologies:",
+                        "content": "Technologies: ",
                         "textStyle": {
                             "bold": true,
                             "foregroundColor": {
@@ -465,10 +465,10 @@
                     }
                 },
                 {
-                    "startIndex": 209,
+                    "startIndex": 210,
                     "endIndex": 314,
                     "textRun": {
-                        "content": " Android, Linux, Docker, Jenkins, NumPy, Pandas, TensorFlow, GraphQL, AWS, React.js, CoreML, Kubernetes.\n",
+                        "content": "Android, Linux, Docker, Jenkins, NumPy, Pandas, TensorFlow, GraphQL, AWS, React.js, CoreML, Kubernetes.\n",
                         "textStyle": {
                             "foregroundColor": {
                                 "color": {

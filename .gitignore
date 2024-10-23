@@ -5,6 +5,7 @@ i_commands.json
 u_commands.json
 resume_doc.json
 complete_resume_doc.json
+resume_result.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
