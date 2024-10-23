@@ -6,12 +6,6 @@
             "position": "Machine Learning and Data Engineering Intern",
             "domain": "ML Engineering",
             "duration": "September 2024 - Present",
-            "technologies": [
-                "Python",
-                "Javascript",
-                "Terraform",
-                "SQL"
-            ],
             "languages": [
                 "Python [Required]",
                 "Terraform",
@@ -19,11 +13,13 @@
             ],
             "frameworks": [
                 "Kubernetes",
-                "DataDog",
-                "Snowflake"
+                "Datadog",
+                "Snowflake",
+                "AWS"
             ],
             "description": [
-                "Extracting key insights from conversation transcripts. Streamlining and securing video processing infrastructure."
+                "Extracting key insights from conversation transcripts, enabling analysis of 1M+ coaching sessions.",
+                "Streamlining and securing data processing pipelines. Automating essential ETL tasks, saving engineers 1000+ hours."
             ]
         },
         {
@@ -32,19 +28,13 @@
             "position": "Software Development Engineering Intern",
             "domain": "Software Engineering",
             "duration": "May 2024 - August 2024",
-            "technologies": [
-                "Kotlin",
-                "Typescript",
-                "GraphQL",
-                "AWS"
-            ],
             "languages": [
                 "Kotlin [Required]",
                 "Typescript [Required]"
             ],
             "frameworks": [
                 "GraphQL",
-                "AWS",
+                "AWS [Required]",
                 "React.js"
             ],
             "description": [
@@ -79,12 +69,6 @@
             "position": "AI Performance Analysis Intern",
             "domain": "Data Engineering",
             "duration": "August 2023 - December 2023",
-            "technologies": [
-                "Python",
-                "Bash",
-                "NumPy",
-                "Pandas"
-            ],
             "languages": [
                 "Python [Required]",
                 "Bash [Required]"
@@ -108,12 +92,6 @@
             "position": "Embedded Software Development Intern",
             "domain": "Embedded Software",
             "duration": "January 2023 - August 2023",
-            "technologies": [
-                "C",
-                "C++",
-                "Android",
-                "Jenkins"
-            ],
             "languages": [
                 "C",
                 "C++ [Required]",
@@ -141,12 +119,6 @@
             "position": "DevOps and Analytics Intern",
             "domain": "Software Engineering",
             "duration": "May 2022 - August 2022",
-            "technologies": [
-                "Python",
-                "Docker",
-                "ElasticSearch",
-                "Linux"
-            ],
             "languages": [
                 "Python"
             ],
@@ -154,7 +126,7 @@
                 "ElasticSearch",
                 "NumPy",
                 "Linux",
-                "Docker",
+                "Docker [Required]",
                 "Pandas"
             ],
             "description": [
@@ -170,12 +142,6 @@
             "position": "Segment Routing IPv6 (SRv6) Testing Intern",
             "domain": "Test Automation",
             "duration": "May 2021 - August 2021",
-            "technologies": [
-                "Python",
-                "SQL",
-                "TensorFlow",
-                "InfluxDB"
-            ],
             "languages": [
                 "Python [Required]",
                 "SQL"

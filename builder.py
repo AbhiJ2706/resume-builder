@@ -116,7 +116,7 @@ def remove_required(x):
     return x.strip()
 
 
-def get_skills(posting, languages, frameworks, n=4):
+def get_skills(posting, languages, frameworks, n=5):
     sorted_languages = posting.rank_keywords(languages)
     sorted_frameworks = posting.rank_keywords(frameworks)
 
@@ -164,7 +164,7 @@ def get_points(posting, resume):
         frameworks.update(used_payload["frameworks"])
     
     resume["languages"] = list(map(lambda x: x[0], languages.most_common()))
-    resume["frameworks"] = list(map(lambda x: x[0], frameworks.most_common()))
+    resume["frameworks"] = list(map(lambda x: x[0], frameworks.most_common()))[:11]
     
     extracurriculars_ranking = []
     
