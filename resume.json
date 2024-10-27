@@ -7,7 +7,7 @@
             "domain": "ML Engineering",
             "duration": "September 2024 - Present",
             "languages": [
-                "Python [Required]",
+                "Python",
                 "Terraform",
                 "SQL"
             ],
@@ -18,8 +18,14 @@
                 "AWS"
             ],
             "description": [
-                "Extracting key insights from conversation transcripts, enabling analysis of 1M+ coaching sessions.",
-                "Streamlining and securing data processing pipelines. Automating essential ETL tasks, saving engineers 1000+ hours."
+                {
+                    "summary": "Extracting key insights from conversation transcripts, enabling analysis of 1M+ coaching sessions.",
+                    "required_skills": []
+                },
+                {
+                    "summary": "Streamlining and securing data processing pipelines. Automating essential ETL tasks, saving engineers 1000+ hours.",
+                    "required_skills": []
+                }
             ]
         },
         {
@@ -29,18 +35,29 @@
             "domain": "Software Engineering",
             "duration": "May 2024 - August 2024",
             "languages": [
-                "Kotlin [Required]",
-                "Typescript [Required]"
+                "Kotlin",
+                "Typescript",
+                "Java",
+                "Javascript"
             ],
             "frameworks": [
                 "GraphQL",
-                "AWS [Required]",
+                "AWS",
                 "React.js"
             ],
             "description": [
-                "Designed an LLM-based assistant to convert language to database queries, accelerating data search times by 10x.",
-                "Created an app to send advertiser leads to sales managers through Slack, improving lead retrieval for 1000+ people.",
-                "Refactored frontend and backend components, decreasing time to develop and deploy form-based services by 50%."
+                {
+                    "summary": "Designed an LLM-based assistant to convert language to database queries, accelerating data search times by 10x.",
+                    "required_skills": ["Kotlin", "Typescript", "AWS"]
+                },
+                {
+                    "summary": "Created an app to send advertiser leads to sales managers through Slack, improving lead retrieval for 1000+ people.",
+                    "required_skills": ["Kotlin", "Typescript", "AWS"]
+                },
+                {
+                    "summary": "Refactored frontend and backend components, decreasing time to develop and deploy form-based services by 50%.",
+                    "required_skills": ["Kotlin", "Typescript"]
+                }
             ]
         },
         {
@@ -60,7 +77,10 @@
                 "CoreML"
             ],
             "description": [
-                "Implemented an LLM test bench, enabling evaluation of 10+ LLMs for qualitative analysis of health science documents."
+                {
+                    "summary": "Implemented an LLM test bench, enabling evaluation of 10+ LLMs for qualitative analysis of health science documents.",
+                    "required_skills": []
+                }
             ]
         },
         {
@@ -70,8 +90,8 @@
             "domain": "Data Engineering",
             "duration": "August 2023 - December 2023",
             "languages": [
-                "Python [Required]",
-                "Bash [Required]"
+                "Python",
+                "Bash"
             ],
             "frameworks": [
                 "NumPy",
@@ -80,10 +100,22 @@
                 "Jenkins"
             ],
             "description": [
-                "Led development of a software profiling pipeline for analyzing the performance of CNNs running on Snapdragon.",
-                "Increased speed of analysis tools by 500+%. Added reduction methods to accelerate preprocessing of large datasets.",
-                "Designed a querying system and cache for large performance datasets (50k+ points), removing dataset size limitation.",
-                "Designed and implemented a time-based search engine to enable nanosecond-level analysis of CNN execution."
+                {
+                    "summary": "Led development of a software profiling pipeline for analyzing the performance of CNNs running on Snapdragon.",
+                    "required_skills": ["Python", "Bash"]
+                },
+                {
+                    "summary": "Increased speed of analysis tools by 500+%. Added reduction methods to accelerate preprocessing of large datasets.",
+                    "required_skills": ["Python"]
+                },
+                {
+                    "summary": "Designed a querying system and cache for large performance datasets (50k+ points), removing dataset size limitation.",
+                    "required_skills": ["Python"]
+                },
+                {
+                    "summary": "Designed and implemented a time-based search engine to enable nanosecond-level analysis of CNN execution.",
+                    "required_skills": ["Python", "NumPy", "Pandas"]
+                }
             ]
         },
         {
@@ -94,7 +126,7 @@
             "duration": "January 2023 - August 2023",
             "languages": [
                 "C",
-                "C++ [Required]",
+                "C++",
                 "Python",
                 "Bash"
             ],
@@ -105,12 +137,30 @@
                 "Docker"
             ],
             "description": [
-                "Optimized Inter-Process Communication (IPC) for an embedded framework that accelerates image processing.",
-                "Added runtime configuration for embedded debugging infrastructure, increasing debug speed for 40+ engineers.",
-                "Created and deployed an Extract-Load-Transform (ELT) pipeline to analyze processor performance on AI workloads.",
-                "Integrated data transmission features into production code, wrote tests to verify thread-safety and scalability.",
-                "Used a data-driven approach to evaluate and improve the performance of Inter-Process Communication (IPC) by 50%.",
-                "Enabled measurement collection for 5+ embedded AI-based image processing use cases on Snapdragon."
+                {
+                    "summary": "Optimized Inter-Process Communication (IPC) for an embedded framework that accelerates image processing.",
+                    "required_skills": ["C++", "Android"]
+                },
+                {
+                    "summary": "Added runtime configuration for embedded debugging infrastructure, increasing debug speed for 40+ engineers.",
+                    "required_skills": ["C++"]
+                },
+                {
+                    "summary": "Created and deployed an Extract-Load-Transform (ELT) pipeline to analyze processor performance on AI workloads.",
+                    "required_skills": ["Python"]
+                },
+                {
+                    "summary": "Integrated data transmission features into production code, wrote tests to verify thread-safety and scalability.",
+                    "required_skills": ["C++", "Android"]
+                },
+                {
+                    "summary": "Used a data-driven approach to evaluate and improve the performance of Inter-Process Communication (IPC) by 50%.",
+                    "required_skills": ["C++", "Python"]
+                },
+                {
+                    "summary": "Enabled measurement collection for 5+ embedded AI-based image processing use cases on Snapdragon.",
+                    "required_skills": ["C++", "Python"]
+                }
             ]
         },
         {
@@ -126,14 +176,27 @@
                 "ElasticSearch",
                 "NumPy",
                 "Linux",
-                "Docker [Required]",
-                "Pandas"
+                "Docker",
+                "Pandas",
+                "Scikit-learn"
             ],
             "description": [
-                "Implemented, A/B tested, and deployed an ML model to recommend code reviewers for pull requests, for 3600+ users.",
-                "Optimized Natural Language Processing (NLP) pipelines for customer service chatbots, increasing accuracy to 99%.",
-                "Reduced the customer service chatbot's Docker image size and memory use by 90+%, saving $35,000+/year.",
-                "Created RESTful APIs to convert chatbot responses to HTML and JSON, accelerating UI/UX development by 2x."
+                {
+                    "summary": "Implemented, A/B tested, and deployed an ML model to recommend code reviewers for pull requests, for 3600+ users.",
+                    "required_skills": ["Python", "Scikit-learn", "NumPy", "Pandas"]
+                },
+                {
+                    "summary": "Optimized Natural Language Processing (NLP) pipelines for customer service chatbots, increasing accuracy to 99%.",
+                    "required_skills": ["Docker"]
+                },
+                {
+                    "summary": "Reduced the customer service chatbot's Docker image size and memory use by 90+%, saving $35,000+/year.",
+                    "required_skills": ["Docker"]
+                },
+                {
+                    "summary": "Created RESTful APIs to convert chatbot responses to HTML and JSON, accelerating UI/UX development by 2x.",
+                    "required_skills": ["Python"]
+                }
             ]
         },
         {
@@ -143,7 +206,7 @@
             "domain": "Test Automation",
             "duration": "May 2021 - August 2021",
             "languages": [
-                "Python [Required]",
+                "Python",
                 "SQL"
             ],
             "frameworks": [
@@ -155,10 +218,22 @@
                 "Pandas"
             ],
             "description": [
-                "Developed a Recurrent Neural Network (RNN)-based model to detect anomalies in router telemetry data.",
-                "Wrote automated unit tests for 5+ SRv6 features, ensuring correctness and scalability across network topologies",
-                "Constructed RESTful APIs to collect and preprocess 60+ SRv6 telemetry metrics using YANG.",
-                "Wrote scripts to automate the configuration of router topologies and simulations for test scenarios."
+                {
+                    "summary": "Developed a Recurrent Neural Network (RNN)-based model to detect anomalies in router telemetry data.",
+                    "required_skills": ["Python", "TensorFlow"]
+                },
+                {
+                    "summary": "Wrote automated unit tests for 5+ SRv6 features, ensuring correctness and scalability across network topologies.",
+                    "required_skills": ["Python"]
+                },
+                {
+                    "summary": "Constructed RESTful APIs to collect and preprocess 60+ SRv6 telemetry metrics using YANG.",
+                    "required_skills": ["Python"]
+                },
+                {
+                    "summary": "Wrote scripts to automate the configuration of router topologies and simulations for test scenarios.",
+                    "required_skills": ["Python"]
+                }
             ]
         }
     ],
@@ -174,7 +249,10 @@
                 "OpenAI"
             ],
             "description": [
-                "Designed a deep reinforcement learning model to trade stocks using sentiment analysis and price predictions."
+                {
+                    "summary": "Designed a deep reinforcement learning model to trade stocks using sentiment analysis and price predictions.",
+                    "required_skills": []
+                }
             ]
         },
         {
@@ -188,10 +266,22 @@
                 "LLMs"
             ],
             "description": [
-                "Reading group lead: presented papers on neural networks, image processing, and NLP to 100+ club members.",
-                "VP of Data analysis: hosted workshops on ML and AI basics, led a team of 5 analysts producing educational content.",
-                "Prepared resources and hosted workshops on Pandas, Numpy, MatPlotLib, and Tensorflow for 100+ members.",
-                "Fine-tuned a distillBERT LLM to retrieve 10+ metrics from climate disclosure extracts, for Manifest Climate."
+                {
+                    "summary": "Reading group lead: presented papers on neural networks, image processing, and NLP to 100+ club members.",
+                    "required_skills": []
+                },
+                {
+                    "summary": "VP of Data analysis: hosted workshops on ML and AI basics, led a team of 5 analysts producing educational content.",
+                    "required_skills": []
+                },
+                {
+                    "summary": "Prepared resources and hosted workshops on Pandas, Numpy, MatPlotLib, and Tensorflow for 100+ members.",
+                    "required_skills": []
+                },
+                {
+                    "summary": "Fine-tuned a distillBERT LLM to retrieve 10+ metrics from climate disclosure extracts, for Manifest Climate.",
+                    "required_skills": []
+                }
             ]
         },
         {
@@ -204,7 +294,10 @@
                 "Next.js"
             ],
             "description": [
-                "Developed the TOHacks landing page using React.js. Built frontend website features used by 10,000+ visitors."
+                {
+                    "summary": "Developed the TOHacks landing page using React.js. Built frontend website features used by 10,000+ visitors.",
+                    "required_skills": []
+                }
             ]
         },
         {
@@ -218,7 +311,10 @@
                 "Mongoose"
             ],
             "description": [
-                "Developed a mock Banking System to teach financial practices to kids, in under 36 hours."
+                {
+                    "summary": "Developed a full-stack app designed to teach financial practices to kids, in under 36 hours.",
+                    "required_skills": []
+                }
             ]
         }
     ]

@@ -1,37 +1,18 @@
-We are looking for the best and brightest new college graduates to join our team of world class, highly motivated software engineers and cloud computing experts. You will have a chance to be mentored and network with senior levels at Salesforce, and be a part of a year long new graduate program with various targeted events throughout the year. 
+In this role, you will
 
-From Marketing Cloud to Service Cloud, Platform to IoT, Einstein Platform, Security and everything in between we have many opportunities available across various applications and platforms. Apply now and we look forward to reaching out to you with opportunities that fit your background and interests! 
+    Design, implement, and improve content creation tools and Editor APIs, such as tab managers, docking stacks, and keybind systems
+    Analyze and fix problems in the Unreal Editor to improve the codebase
+    Work with stakeholders in all disciplines (i.e. programmers, artists, and designers) to identify areas for improvements, gather feedback, and design solutions for users’ needs in the Unreal Editor
+    Support external customers by answering their technical requests and questions
+    Work collaboratively across many of Epics’ internal teams to improve the user experience and workflows within Unreal Editor.
 
-Key Responsibilities:
 
-    Architect, design, implement, test and deliver highly scalable products
+What We're Looking For
 
-    Master our development process, culture and code base, then improve it
-
-    Work closely with a team of engineers, product managers, user experience experts and performance engineers to build new features our customers will love, adopt and use while keeping our trusted platform stable and scalable
-
-    Develop test strategies, design automation frameworks, write unit/functional tests to drive up code coverage and automation metrics
-
-    Analyze, design and develop test cases and implement automated test suites
-
-Required Skills:
-
-    BS or MS in Computer Science or related technical field
-
-    Must have graduated in the past 12 months to be eligible
-
-    Academic, professional or internship experience working in a professional coding setting environment
-
-    Fluency in object-oriented programming/design
-
-    Academic, professional or internship experience in one of Java, Python, Javascript, HTML, SQL or C++
-
-Desired Skills:
-
-    Strong analytical and problem-solving skills
-
-    Team-player with the ability to work effectively and efficiently with others
-
-    Be a self-starter and possess strong sense of self-motivation
-
-    Experience using telemetry and metrics to drive operational excellence
+    Excellent C++ skills
+    Experience developing in a large codebase
+    Experience with at least one UI Framework (i.e. WPF/XAML, Slate, WinForms, Qt)
+    Experience developing tools that improve the user experience, iteration, and development time in game development or other fields
+    Ability to work cross-discipline, from content creators to programmers, from UX designers to QA analysts.
+    A passion for improving the customer experience beyond code. Some examples of your passion may be - participating in UX design, developing automated tests, or adding profiling and analytics to monitor user behaviors
+    Someone who is user-focused, solutions-focused, and innovative. These traits equal success at Epic and influence everything we do
