@@ -142,7 +142,7 @@
                     "required_skills": ["C++", "Android"]
                 },
                 {
-                    "summary": "Added runtime configuration for embedded debugging infrastructure, increasing debug speed for 40+ engineers.",
+                    "summary": "Added runtime configuration for embedded debugging infrastructure, increasing debugging speed for 40+ engineers.",
                     "required_skills": ["C++"]
                 },
                 {
