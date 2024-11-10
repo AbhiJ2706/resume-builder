@@ -220,8 +220,8 @@ def build_education(index):
 
 def build_doc():
     with open("doc/skeleton.json", "r") as skeleton, \
-            open("resume_result.json", "r") as resume, \
-            open("resume_doc.json", "w+") as final_doc:
+            open("artifacts/resume_result.json", "r") as resume, \
+            open("artifacts/resume_doc.json", "w+") as final_doc:
         doc = json.loads(skeleton.read())
         resume_json = json.loads(resume.read())
 
@@ -270,9 +270,9 @@ def build_doc():
 
 
 def convert_to_instructions():
-    with open("resume_doc.json", "r") as doc, \
-            open("i_commands.json", "w+") as i_command_file, \
-            open("u_commands.json", "w+") as u_command_file:
+    with open("artifacts/resume_doc.json", "r") as doc, \
+            open("artifacts/i_commands.json", "w+") as i_command_file, \
+            open("artifacts/u_commands.json", "w+") as u_command_file:
         doc_json = json.loads(doc.read())
 
         i_commands = []

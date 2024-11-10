@@ -3,7 +3,7 @@
         {
             "company": "BetterUp",
             "location": "San Francisco, CA",
-            "position": "Machine Learning and Data Engineering Intern",
+            "position": "Machine Learning Engineering Intern",
             "domain": "ML Engineering",
             "duration": "September 2024 - Present",
             "languages": [
@@ -15,16 +15,21 @@
                 "Kubernetes",
                 "Datadog",
                 "Snowflake",
-                "AWS"
+                "AWS",
+                "Docker"
             ],
             "description": [
                 {
-                    "summary": "Extracting key insights from conversation transcripts, enabling analysis of 1M+ coaching sessions.",
-                    "required_skills": []
+                    "summary": "Extracted conversation insights from session transcripts, evaluating quality of 1M+ coaching sessions.",
+                    "required_skills": ["Python"]
                 },
                 {
-                    "summary": "Streamlining and securing data processing pipelines. Automating essential ETL tasks, saving engineers 1000+ hours.",
-                    "required_skills": []
+                    "summary": "Developed a robust job title segmentation model, improving granularity of session analysis.",
+                    "required_skills": ["Python"]
+                },
+                {
+                    "summary": "Streamlined and secured data processing pipelines. Automating essential ETL tasks, saving engineers 1000+ hours.",
+                    "required_skills": ["Terraform"]
                 }
             ]
         },
@@ -55,7 +60,7 @@
                     "required_skills": ["Kotlin", "Typescript", "AWS"]
                 },
                 {
-                    "summary": "Refactored frontend and backend components, decreasing time to develop and deploy form-based services by 50%.",
+                    "summary": "Refactored frontend and backend components, decreasing time to develop and deploy form-based services by 30%.",
                     "required_skills": ["Kotlin", "Typescript"]
                 }
             ]

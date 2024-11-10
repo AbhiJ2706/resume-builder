@@ -48,12 +48,12 @@ def main(fetch=False, document_id=None, company=None):
             print(document["documentId"])
             
             result = service.documents().batchUpdate(documentId=document["documentId"], body={
-                'requests': json.loads(open("i_commands.json", "r").read())
+                'requests': json.loads(open("artifacts/i_commands.json", "r").read())
             }).execute()
             print(result)
 
             result = service.documents().batchUpdate(documentId=document["documentId"], body={
-                'requests': json.loads(open("u_commands.json", "r").read())
+                'requests': json.loads(open("artifacts/u_commands.json", "r").read())
             }).execute()
             print(result)
 

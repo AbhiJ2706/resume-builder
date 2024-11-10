@@ -135,7 +135,7 @@
                     "startIndex": 40,
                     "endIndex": 59,
                     "textRun": {
-                        "content": "abhij2706.github.io",
+                        "content": "github.com/AbhiJ2706",
                         "textStyle": {
                             "underline": true,
                             "fontSize": {
@@ -147,7 +147,7 @@
                                 "weight": 400
                             },
                             "link": {
-                                "url": "https://abhij2706.github.io"
+                                "url": "https://github.com/AbhiJ2706"
                             }
                         }
                     }

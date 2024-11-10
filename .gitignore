@@ -1,13 +1,8 @@
 # added by me
 token.json
 credentials.json
-i_commands.json
-u_commands.json
-resume_doc.json
-complete_resume_doc.json
-resume_result.json
-sentences.txt
-posting.txt
+artifacts/
+input/posting.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

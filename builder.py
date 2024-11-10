@@ -2,6 +2,7 @@ from collections import Counter
 import json
 import re
 from sentence_transformers import SentenceTransformer
+from transformers import AutoTokenizer, AutoModelForTokenClassification
 import logging
 import spacy
 import string
@@ -9,8 +10,12 @@ import yake
 import nltk.data
 
 
-NLP = spacy.load("en_core_web_sm")
+NLP = spacy.load("en_core_web_lg")
 SENTENCE_TOKENIZER = nltk.data.load('tokenizers/punkt/english.pickle')
+
+TRANSFORMER_MODEL = "jjzha/jobbert_knowledge_extraction"
+TRANSFORMER_TOKENIZER = AutoTokenizer.from_pretrained(TRANSFORMER_MODEL)
+TRANSFORMER_LLM = AutoModelForTokenClassification.from_pretrained(TRANSFORMER_MODEL)
 
 
 class JobPosting:
@@ -34,15 +39,14 @@ class JobPosting:
         return sorted([(kw, self.__keyword_score(kw, required)) for kw in keywords], key=lambda x: x[1], reverse=True)
 
     def __get_sentences(self):
-        sentences = SENTENCE_TOKENIZER.tokenize(self.raw_posting)
+        base_sentences = self.raw_posting.split("\n")
         result = []
-        for sent in sentences:
-            nl_split = sent.split("\n")
-            if type(nl_split) == str:
-                result += [sent]
-            else:
-                result += nl_split
-        with open("sentences.txt", "w+") as f:
+
+        for sent in base_sentences:
+            sentences = SENTENCE_TOKENIZER.tokenize(sent)
+            result += sentences
+
+        with open("artifacts/sentences.txt", "w+") as f:
             f.write("\n\n".join(result))
         return result
     
@@ -59,31 +63,79 @@ class JobPosting:
     def __keyword_score(self, kw, required):
         if kw in required:
             return float("inf")
-        kw_embedding = self.__embedding(kw.lower())
-        return max([self.__similarity(kw_embedding, self.__embedding(k)) for k in self.keywords])
+        with open("input/skill_descriptions.json", "r") as f:
+            skill_descriptions = json.loads(f.read())
+            if skill_descriptions.get(kw.lower()):
+                desc = f" ({skill_descriptions.get(kw.lower())})"
+            else:
+                desc = ""
+            kw_embedding = self.__embedding(f"{kw.lower()}{desc}")
+            return max([self.__similarity(kw_embedding, self.__embedding(k)) for k in self.keywords])
 
     def __get_embedding(self):
         return list(map(self.__embedding, self.sentences))
 
     def __get_keywords(self):
-        topics = set()
+        inputs = TRANSFORMER_TOKENIZER.encode(self.raw_posting, return_tensors="pt")
+        outputs = TRANSFORMER_LLM(inputs)
+        logits = outputs.logits
+        zipped = [(x, y) for x, y in zip(logits.argmax(-1)[0], inputs[0])]
 
-        doc = NLP(string.capwords(self.raw_posting))
-        for token in doc:
-            if token.pos_ == 'PROPN':
-                topics.add(str(token).lower())
-        
-        extractor = yake.KeywordExtractor(lan="en", n=2, dedupLim=0.5, top=20, features=None)
+        results = []
+        adding = False
+        current = []
 
-        keywords = extractor.extract_keywords(self.raw_posting)
+        for (label, token) in zipped:
+            if label == 2:
+                if not adding:
+                    continue
+                else:
+                    results.append(current)
+                    current = []
+                    adding = False
+            else:
+                if label == 1:
+                    current.append(token)
+                elif label == 0:
+                    if not adding:
+                        adding = True
+                        current.append(token)
+                    else:
+                        if token != 1116:
+                            results.append(current)
+                            current = []
+                        current.append(token)
 
-        for kw in keywords:
-            topics.add(kw[0].lower())
+        decoded = [TRANSFORMER_TOKENIZER.decode(result) for result in results]
+
+        true_results = []
+        in_list = False
+
+        for token in decoded:
+            if in_list:
+                if token.startswith("##"):
+                    true_results[-1] += token[2:]
+                else:
+                    true_results[-1] += token
+                if token.endswith(")"):
+                    in_list = False
+                continue
+            if token.startswith("##"):
+                true_results[-1] += token[2:]
+            elif token.startswith("+"):
+                true_results[-1] += token
+            elif len(true_results) and true_results[-1].endswith("("):
+                in_list = True
+                true_results[-1] += token
+            else:
+                true_results.append(token)
         
-        with open("sentences.txt", "a+") as f:
-            f.write(", ".join(topics))
-        
-        return list(topics)
+        topics = set(list(map(lambda x: x.lower(), list(filter(lambda x: len(x) > 1 or x.lower() == "c", true_results)))))
+
+        with open("artifacts/topics.txt", "w+") as f:
+            f.write(str(topics))
+        return topics
+
 
 
 def rank_whole_point(posting, section):
@@ -164,11 +216,11 @@ def get_skills(posting, languages, frameworks, n=5, required=set()):
 
 
 def read_resume():
-    with open("resume.json", "r+") as f:
+    with open("input/resume.json", "r+") as f:
         return json.loads(f.read())
 
 def read_posting():
-    with open("posting.txt", "r+") as f:
+    with open("input/posting.txt", "r+") as f:
         return f.read()
 
 
@@ -214,13 +266,13 @@ def get_points(posting, resume):
         res["description"] = res_points
         resume["extracurriculars"].append(res)
     
-    with open("resume_result.json", "w+") as f:
+    with open("artifacts/resume_result.json", "w+") as f:
         f.write(json.dumps(resume, indent=4))
 
 
 if __name__ == "__main__":
     logger = logging.getLogger()
-    logging.basicConfig(filename='log2.log', level=logging.ERROR)
+    logging.basicConfig(filename='artifacts/log.log', level=logging.ERROR)
 
     posting = JobPosting(read_posting())
     get_points(posting, read_resume())

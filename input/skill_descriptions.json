@@ -1,0 +1,13 @@
+{
+    "python": "Programming Language for backend development and machine learning",
+    "java": "Programming Language for backend development",
+    "javascript": "Programming Language for web development",
+    "kotlin": "Programming Language for backend development",
+    "typescript": "Programming Language for web development",
+    "sql": "Programming Language for database querying",
+    "c": "Programming Language for low-level programming",
+    "c++": "Programming Language for low-level programming",
+    "bash": "Programming Language for scripting",
+    "docker": "technology for deploying apps to the cloud as containers",
+    "kubernetes": "technology for deploying and orchestrating container-based apps"
+}
