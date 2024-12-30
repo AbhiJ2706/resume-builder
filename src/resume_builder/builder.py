@@ -1,13 +1,13 @@
-from collections import Counter
-import json
-import re
+import spacy
+import nltk.data
+
 from sentence_transformers import SentenceTransformer
 from transformers import AutoTokenizer, AutoModelForTokenClassification
+
+import json
 import logging
-import spacy
-import string
-import yake
-import nltk.data
+
+from collections import Counter
 
 
 NLP = spacy.load("en_core_web_lg")
