@@ -1,6 +1,7 @@
 import json
 import os.path
 import argparse
+import subprocess
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -12,8 +13,13 @@ from googleapiclient.errors import HttpError
 SCOPES = ["https://www.googleapis.com/auth/documents"]
 
 
-def main(fetch=False, document_id=None, company=None):
-    
+def generate_latex(company):
+    proc = subprocess.Popen(['pdflatex', 'final_doc.tex'], cwd="artifacts")
+    proc.communicate()
+    os.rename('artifacts/final_doc.pdf', f'artifacts/abhinav_jain_resume_{company}.pdf')
+
+
+def generate_google_doc(fetch=False, document_id=None, company=None):
     creds = None
     
     if os.path.exists("token.json"):
@@ -91,13 +97,23 @@ if __name__ == "__main__":
         help="ID of document to get."
     )
 
+    parser.add_argument(
+        "--latex", 
+        "-l", 
+        action="store_true",
+        help="Generate Latex if set."
+    )
+
     args = parser.parse_args()
 
-    if args.fetch:
-        if not args.id:
-            parser.error('id is required when fetching.')
-        main(args.fetch, args.id)
+    if args.latex:
+        generate_latex(company=args.company)
     else:
-        if not args.company:
-            parser.error('company is required when generating.')
-        main(company=args.company)
+        if args.fetch:
+            if not args.id:
+                parser.error('id is required when fetching.')
+            generate_google_doc(args.fetch, args.id)
+        else:
+            if not args.company:
+                parser.error('company is required when generating.')
+            generate_google_doc(company=args.company)

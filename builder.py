@@ -113,14 +113,14 @@ class JobPosting:
 
         for token in decoded:
             if in_list:
-                if token.startswith("##"):
+                if token.startswith("##") and len(token) >= 3 and len(true_results):
                     true_results[-1] += token[2:]
                 else:
                     true_results[-1] += token
                 if token.endswith(")"):
                     in_list = False
                 continue
-            if token.startswith("##"):
+            if token.startswith("##") and len(token) >= 3 and len(true_results):
                 true_results[-1] += token[2:]
             elif token.startswith("+"):
                 true_results[-1] += token

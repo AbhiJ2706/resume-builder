@@ -20,15 +20,15 @@
             ],
             "description": [
                 {
-                    "summary": "Extracted conversation insights from session transcripts, evaluating quality of 1M+ coaching sessions.",
+                    "summary": "Extracted conversation insights from coaching session transcripts, enabling quality analysis for 1M+ sessions.",
                     "required_skills": ["Python"]
                 },
                 {
-                    "summary": "Developed a robust job title segmentation model, improving granularity of session analysis.",
+                    "summary": "Developed a robust job title segmentation model, improving granularity of session transcript analysis.",
                     "required_skills": ["Python"]
                 },
                 {
-                    "summary": "Streamlined and secured data processing pipelines. Automating essential ETL tasks, saving engineers 1000+ hours.",
+                    "summary": "Streamlined and secured data processing pipelines. Automated essential ETL tasks, saving engineers 1000+ hours.",
                     "required_skills": ["Terraform"]
                 }
             ]
@@ -159,12 +159,12 @@
                     "required_skills": ["C++", "Android"]
                 },
                 {
-                    "summary": "Used a data-driven approach to evaluate and improve the performance of Inter-Process Communication (IPC) by 50%.",
+                    "summary": "Used a data-driven approach to speed up Inter-Process Communication (IPC) for an embedded AI accelerator by 50%.",
                     "required_skills": ["C++", "Python"]
                 },
                 {
-                    "summary": "Enabled measurement collection for 5+ embedded AI-based image processing use cases on Snapdragon.",
-                    "required_skills": ["C++", "Python"]
+                    "summary": "Implemented infrastructure to collect performance metrics for 5+ embedded AI-based image processing use cases.",
+                    "required_skills": ["C++"]
                 }
             ]
         },
@@ -195,7 +195,7 @@
                     "required_skills": ["Docker"]
                 },
                 {
-                    "summary": "Reduced the customer service chatbot's Docker image size and memory use by 90+%, saving $35,000+/year.",
+                    "summary": "Reduced the Cisco customer service chatbot's Docker image size and memory use by 90+%, saving $35,000+/year.",
                     "required_skills": ["Docker"]
                 },
                 {

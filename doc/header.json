@@ -133,7 +133,7 @@
                 },
                 {
                     "startIndex": 40,
-                    "endIndex": 59,
+                    "endIndex": 60,
                     "textRun": {
                         "content": "github.com/AbhiJ2706",
                         "textStyle": {
@@ -153,8 +153,8 @@
                     }
                 },
                 {
-                    "startIndex": 59,
-                    "endIndex": 62,
+                    "startIndex": 60,
+                    "endIndex": 63,
                     "textRun": {
                         "content": " \u2022 ",
                         "textStyle": {
@@ -170,8 +170,8 @@
                     }
                 },
                 {
-                    "startIndex": 62,
-                    "endIndex": 88,
+                    "startIndex": 63,
+                    "endIndex": 89,
                     "textRun": {
                         "content": "linkedin.com/in/abhij2706/",
                         "textStyle": {
@@ -191,8 +191,8 @@
                     }
                 },
                 {
-                    "startIndex": 88,
-                    "endIndex": 89,
+                    "startIndex": 89,
+                    "endIndex": 90,
                     "textRun": {
                         "content": " ",
                         "textStyle": {
@@ -208,8 +208,8 @@
                     }
                 },
                 {
-                    "startIndex": 89,
-                    "endIndex": 91,
+                    "startIndex": 90,
+                    "endIndex": 92,
                     "textRun": {
                         "content": "\u2022 ",
                         "textStyle": {
@@ -225,8 +225,8 @@
                     }
                 },
                 {
-                    "startIndex": 91,
-                    "endIndex": 106,
+                    "startIndex": 92,
+                    "endIndex": 107,
                     "textRun": {
                         "content": "+1 343 558 2078",
                         "textStyle": {
@@ -246,8 +246,8 @@
                     }
                 },
                 {
-                    "startIndex": 106,
-                    "endIndex": 107,
+                    "startIndex": 107,
+                    "endIndex": 108,
                     "textRun": {
                         "content": "\n",
                         "textStyle": {
@@ -289,13 +289,13 @@
         }
     },
     {
-        "startIndex": 107,
-        "endIndex": 108,
+        "startIndex": 108,
+        "endIndex": 109,
         "paragraph": {
             "elements": [
                 {
-                    "startIndex": 107,
-                    "endIndex": 108,
+                    "startIndex": 108,
+                    "endIndex": 109,
                     "textRun": {
                         "content": "\n",
                         "textStyle": {
@@ -336,13 +336,13 @@
         }
     },
     {
-        "startIndex": 108,
-        "endIndex": 196,
+        "startIndex": 109,
+        "endIndex": 197,
         "paragraph": {
             "elements": [
                 {
-                    "startIndex": 108,
-                    "endIndex": 118,
+                    "startIndex": 109,
+                    "endIndex": 119,
                     "textRun": {
                         "content": "Languages:",
                         "textStyle": {
@@ -368,8 +368,8 @@
                     }
                 },
                 {
-                    "startIndex": 118,
-                    "endIndex": 119,
+                    "startIndex": 119,
+                    "endIndex": 120,
                     "textRun": {
                         "content": " ",
                         "textStyle": {
@@ -394,7 +394,7 @@
                     }
                 },
                 {
-                    "startIndex": 119,
+                    "startIndex": 120,
                     "endIndex": 196,
                     "textRun": {
                         "content": "Python, C, C++, Typescript, Javascript, Kotlin, Swift, Bash, SQL, Terraform.\n",

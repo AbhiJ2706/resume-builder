@@ -5,7 +5,7 @@ def build_header(languages, technologies, index):
     with open("doc/header.json", "r") as header:
         header_json = json.loads(header.read())
 
-        index = 119
+        index = 120
 
         languages_string = f"{', '.join(languages)}.\n"
 
