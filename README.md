@@ -6,7 +6,7 @@
 - In `latex_builder.py`, update the `build_header` function latex to include your details.
 - In `latex_builder.py`, update the `build_skills` function latex to include the relevant domains (this will not be required in the future).
 - In `latex_builder.py`, update the `build_education` function latex to include your education details.
-- Replace the resume JSON with your own.
+- Replace the resume JSON with your own. Format must match example.
 - Put your job posting in `input/posting.txt`.
 - Run `hatch run run-latex [company name]`.
 
