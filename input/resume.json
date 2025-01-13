@@ -16,11 +16,19 @@
                 "Datadog",
                 "Snowflake",
                 "AWS",
-                "Docker"
+                "Docker",
+                "Scikit-learn",
+                "NumPy",
+                "Pandas",
+                "TensorFlow"
             ],
             "description": [
                 {
-                    "summary": "Extracted conversation insights from coaching session transcripts, enabling quality analysis for 1M+ sessions.",
+                    "summary": "Led the development of a deep learning-based transcript analysis app, delivering 20+ user progress insights to BetterUp's partners.",
+                    "required_skills": ["Python"]
+                },
+                {
+                    "summary": "Extracted conversation insights from coaching session transcripts, enabling platform-wide quality analysis for 1M+ sessions.",
                     "required_skills": ["Python"]
                 },
                 {
@@ -71,10 +79,6 @@
             "position": "Undergraduate Research Assistant",
             "domain": "AI/ML Research",
             "duration": "January 2024 - April 2024",
-            "technologies": [
-                "Swift",
-                "CoreML"
-            ],
             "languages": [
                 "Swift"
             ],
@@ -182,12 +186,11 @@
                 "NumPy",
                 "Linux",
                 "Docker",
-                "Pandas",
-                "Scikit-learn"
+                "Pandas"
             ],
             "description": [
                 {
-                    "summary": "Implemented, A/B tested, and deployed an ML model to recommend code reviewers for pull requests, for 3600+ users.",
+                    "summary": "Implemented, tested, and deployed an ML model to recommend code reviewers for pull requests, serving 3600+ users.",
                     "required_skills": ["Python", "Scikit-learn", "NumPy", "Pandas"]
                 },
                 {
@@ -220,7 +223,8 @@
                 "NumPy",
                 "Linux",
                 "Grafana",
-                "Pandas"
+                "Pandas",
+                "Scikit-learn"
             ],
             "description": [
                 {

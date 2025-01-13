@@ -51,8 +51,11 @@ dependencies = [
   "coverage[toml]>=6.5",
   "pytest",
 ]
+post-install-commands = [
+  "python -m spacy download en_core_web_lg",
+]
 [tool.hatch.envs.default.scripts]
-test = "pytest {args:tests}"
+test = "pytest -rP {args:tests}"
 test-cov = "coverage run -m pytest {args:tests}"
 cov-report = [
   "- coverage combine",
@@ -62,6 +65,8 @@ cov = [
   "test-cov",
   "cov-report",
 ]
+run-gdoc = "./gdoc_pipeline.sh {args:tests}"
+run-latex = "./latex_pipeline.sh {args:tests}"
 
 [[tool.hatch.envs.all.matrix]]
 python = ["3.8", "3.9", "3.10", "3.11", "3.12"]

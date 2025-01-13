@@ -3,6 +3,7 @@ token.json
 credentials.json
 artifacts/
 input/posting.txt
+output/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

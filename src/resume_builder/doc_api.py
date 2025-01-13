@@ -16,7 +16,7 @@ SCOPES = ["https://www.googleapis.com/auth/documents"]
 def generate_latex(company):
     proc = subprocess.Popen(['pdflatex', 'final_doc.tex'], cwd="artifacts")
     proc.communicate()
-    os.rename('artifacts/final_doc.pdf', f'artifacts/abhinav_jain_resume_{company}.pdf')
+    os.rename('artifacts/final_doc.pdf', f'output/abhinav_jain_resume_{company}.pdf')
 
 
 def generate_google_doc(fetch=False, document_id=None, company=None):

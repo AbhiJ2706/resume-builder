@@ -9,5 +9,11 @@
     "c++": "Programming Language for low-level programming",
     "bash": "Programming Language for scripting",
     "docker": "technology for deploying apps to the cloud as containers",
-    "kubernetes": "technology for deploying and orchestrating container-based apps"
+    "kubernetes": "technology for deploying and orchestrating container-based apps",
+    "scikit-learn": "library containing ready-to-use machine learning models",
+    "aws": "suite of products for cloud-based development, including container hosting and databases.",
+    "datadog": "analytics dashboard and infrastructure monitoring service",
+    "numpy": "library enabling computations and data processing in python",
+    "pandas": "library enabling the use of tables and data processing in python",
+    "jenkins": "platform enabling automated testing and deployment"
 }

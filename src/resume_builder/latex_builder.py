@@ -2,6 +2,19 @@ import json
 import textwrap
 
 
+def build_header():
+    return textwrap.dedent(
+        r"""
+        \begin{center}
+            \textbf{\Huge \scshape Abhinav Jain} \\ \vspace{1pt}
+            \small +1 343-558-2078 $|$ \href{mailto:a252jain@uwaterloo.ca}{\underline{a252jain@uwaterloo.ca}} $|$ 
+            \href{linkedin.com/in/abhij2706}{\underline{linkedin.com/in/abhij2706}} $|$
+            \href{https://github.com/AbhiJ2706}{\underline{https://github.com/AbhiJ2706}}
+        \end{center}
+        """
+    )
+
+
 def build_skills(languages, technologies):
     return textwrap.dedent(
         fr"""
@@ -23,7 +36,7 @@ def build_education():
             \resumeSubHeadingListStart
                 \resumeSubheading
                 {University of Waterloo}{Waterloo, ON}
-                {Bachelor of Computer Science with AI Specialization, (Honors, Co-op)}{Sep. 2020-- May 2025 (Expected)}
+                {Bachelor of Computer Science with AI Specialization (Honors, Co-op)}{Sep. 2020-- May 2025 (Expected)}
             \resumeSubHeadingListEnd
         """
     )
@@ -126,18 +139,7 @@ def build_doc():
         doc = preamble.read()
         resume_json = json.loads(resume.read())
 
-        header = textwrap.dedent(
-            r"""
-            \begin{center}
-                \textbf{\Huge \scshape Abhinav Jain} \\ \vspace{1pt}
-                \small +1 343-558-2078 $|$ \href{mailto:a252jain@uwaterloo.ca}{\underline{a252jain@uwaterloo.ca}} $|$ 
-                \href{linkedin.com/in/abhij2706}{\underline{Linkedin}} $|$
-                \href{https://github.com/AbhiJ2706}{\underline{GitHub}}
-            \end{center}
-            """
-        )
-
-        doc += header
+        doc += build_header()
 
         doc += build_skills(resume_json["languages"], resume_json["frameworks"])
 
