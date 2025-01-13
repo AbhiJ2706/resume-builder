@@ -8,8 +8,8 @@ def build_header():
         \begin{center}
             \textbf{\Huge \scshape Abhinav Jain} \\ \vspace{1pt}
             \small +1 343-558-2078 $|$ \href{mailto:a252jain@uwaterloo.ca}{\underline{a252jain@uwaterloo.ca}} $|$ 
-            \href{linkedin.com/in/abhij2706}{\underline{linkedin.com/in/abhij2706}} $|$
-            \href{https://github.com/AbhiJ2706}{\underline{https://github.com/AbhiJ2706}}
+            \href{https://linkedin.com/in/abhij2706}{\underline{linkedin.com/in/abhij2706}} $|$
+            \href{https://github.com/AbhiJ2706}{\underline{github.com/AbhiJ2706}}
         \end{center}
         """
     )
@@ -20,9 +20,9 @@ def build_skills(languages, technologies):
         fr"""
         \begin{{itemize}}[leftmargin=0.15in, label={{}}]
             \small{{\item{{
-                \textbf{{Languages}}{{: {', '.join(languages)}}} \\
-                \textbf{{Technologies}}{{: {', '.join(technologies)}}} \\
-                \textbf{{Domains}}{{: Software Engineering, ML Engineering, Data Engineering, Embedded Software, Test Automation, AI/ML Research}} \\
+                \textbf{{Languages}}{{: {', '.join(languages) + '.'}}} \\
+                \textbf{{Technologies}}{{: {', '.join(technologies) + '.'}}} \\
+                \textbf{{Domains}}{{: Software Engineering, ML Engineering, Data Engineering, Embedded Software, Test Automation, AI/ML Research.}} \\
             }}}}
         \end{{itemize}}
         """
