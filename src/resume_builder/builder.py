@@ -2,6 +2,7 @@ import nltk.data
 import spacy
 import torch
 
+from keybert import KeyBERT
 from torch.nn.functional import cosine_similarity
 from transformers import BertTokenizer, BertModel, AutoTokenizer, AutoModelForTokenClassification
 
@@ -92,6 +93,10 @@ class KeywordExtractor:
         keywords = set(list(filter(lambda x: len(x) > 1 or x.lower() == "c", reconstructed_tokens)))
         if lowercase:
             keywords = set(list(map(lambda x: x.lower(), keywords)))
+        
+        if not keywords:
+            kw_model = KeyBERT()
+            keywords = list(map(lambda x: x[0].lower(), kw_model.extract_keywords(text, top_n=20, keyphrase_ngram_range=(1, 2))))
 
         with open("artifacts/topics.txt", "w+") as f:
             f.write("\n".join(keywords))
