@@ -26,7 +26,7 @@ class Figtree(LatexTemplate):
         return td(
             fr"""
             \begin{{center}}
-                \textbf{{\Huge \scshape {name}}} \\ \vspace{{1pt}}
+                \textbf{{\Huge \scshape \blue{{{name}}}}} \\ \vspace{{1pt}}
                 \small {phone} $|$ \href{{mailto:{email}}}{{\underline{{{email}}}}} $|$ 
                 \href{{{linkedin}}}{{\underline{{{linkedin_without_https}}}}} $|$
                 \href{{{profile}}}{{\underline{{{profile_without_https}}}}}
@@ -50,7 +50,7 @@ class Figtree(LatexTemplate):
     def build_education(self):
         return td(
             r"""
-            \section{Education}
+            \section{\blue{Education}}
                 \resumeSubHeadingListStart
                     \resumeSubheading
                     {University of Waterloo}{Waterloo, ON}
@@ -92,7 +92,7 @@ class Figtree(LatexTemplate):
     def build_experiences(self, experience_json):
         experience = td(
             r"""
-            \section{Experience}
+            \section{\blue{Experience}}
                 \resumeSubHeadingListStart
             """
         )
@@ -141,7 +141,7 @@ class Figtree(LatexTemplate):
     def build_extracurriculars(self, extracurricular_json):
         extracurricular = td(
             r"""
-            \section{Extracurriculars}
+            \section{\blue{Extracurriculars}}
                 \resumeSubHeadingListStart
             """
         )
