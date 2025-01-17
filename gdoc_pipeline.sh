@@ -1,2 +1,2 @@
 company=$1
-python builder.py && python doc_builder.py && python doc_api.py --company $company
+python src/resume_builder/builder.py && python src/resume_builder/doc_builder.py && python src/resume_builder/doc_api.py --company $company

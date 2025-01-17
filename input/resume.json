@@ -1,11 +1,27 @@
 {
+    "info": {
+        "firstname": "Abhinav",
+        "lastname": "Jain",
+        "phone": "+1 343-558-2078",
+        "email": "a252jain@uwaterloo.ca",
+        "linkedin": "https://linkedin.com/in/abhij2706",
+        "profile": "https://github.com/AbhiJ2706",
+        "domains": [
+            "Software Engineering", 
+            "ML Engineering", 
+            "Data Engineering", 
+            "Embedded Software", 
+            "Test Automation", 
+            "AI/ML Research"
+        ] 
+    },
     "experience": [
         {
             "company": "BetterUp",
             "location": "San Francisco, CA",
             "position": "Machine Learning Engineering Intern",
             "domain": "ML Engineering",
-            "duration": "September 2024 - Present",
+            "duration": "September 2024 - December 2024",
             "languages": [
                 "Python",
                 "Terraform",
@@ -210,7 +226,7 @@
         {
             "company": "Cisco Systems",
             "location": "Ottawa, ON",
-            "position": "Segment Routing IPv6 (SRv6) Testing Intern",
+            "position": "Software Engineering Intern",
             "domain": "Test Automation",
             "duration": "May 2021 - August 2021",
             "languages": [

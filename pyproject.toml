@@ -66,8 +66,8 @@ cov = [
   "test-cov",
   "cov-report",
 ]
-run-gdoc = "./gdoc_pipeline.sh {args:tests}"
-run-latex = "./latex_pipeline.sh {args:tests}"
+gdoc = "./gdoc_pipeline.sh {args:tests}"
+latex = "./latex_pipeline.sh {args:tests}"
 
 [[tool.hatch.envs.all.matrix]]
 python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
