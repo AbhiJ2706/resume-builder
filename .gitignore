@@ -4,6 +4,7 @@ credentials.json
 artifacts/
 input/posting.txt
 output/
+fonts/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
