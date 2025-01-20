@@ -48,11 +48,11 @@
                     "required_skills": ["Python"]
                 },
                 {
-                    "summary": "Developed a robust job title segmentation model, improving granularity of session transcript analysis.",
+                    "summary": "Developed a model to group users by job title, improving progress insights and personalized experience for 1M+ users.",
                     "required_skills": ["Python"]
                 },
                 {
-                    "summary": "Streamlined and secured data processing pipelines. Automated essential ETL tasks, saving engineers 1000+ hours.",
+                    "summary": "Streamlined and secured data processing pipelines. Automated essential data monitoring tasks, saving engineers 1000+ hours.",
                     "required_skills": ["Terraform"]
                 }
             ]
@@ -76,15 +76,15 @@
             ],
             "description": [
                 {
-                    "summary": "Designed an LLM-based assistant to convert language to database queries, accelerating data search times by 10x.",
+                    "summary": "Designed an LLM-based assistant to convert natural language to database queries, speeding up data retrieval times by 10x.",
                     "required_skills": ["Kotlin", "Typescript", "AWS"]
                 },
                 {
-                    "summary": "Created an app to send advertiser leads to sales managers through Slack, improving lead retrieval for 1000+ people.",
+                    "summary": "Created an app to send advertiser leads to sales managers through Slack, improving delivery of leads for 1000+ employees.",
                     "required_skills": ["Kotlin", "Typescript", "AWS"]
                 },
                 {
-                    "summary": "Refactored frontend and backend components, decreasing time to develop and deploy form-based services by 30%.",
+                    "summary": "Refactored backend components of Amazon's lead retrieval platform, decreasing development time for new services by 30%.",
                     "required_skills": ["Kotlin", "Typescript"]
                 }
             ]
@@ -103,7 +103,7 @@
             ],
             "description": [
                 {
-                    "summary": "Implemented an LLM test bench, enabling evaluation of 10+ LLMs for qualitative analysis of health science documents.",
+                    "summary": "Implemented an LLM test bench. Evaluated 10+ LLMs in a pipeline for unsupervised topic modelling of social media posts.",
                     "required_skills": []
                 }
             ]
@@ -126,19 +126,19 @@
             ],
             "description": [
                 {
-                    "summary": "Led development of a software profiling pipeline for analyzing the performance of CNNs running on Snapdragon.",
+                    "summary": "Led the development of a software profiling pipeline, enabling tracing and analysis of CNN performance on Snapdragon.",
                     "required_skills": ["Python", "Bash"]
                 },
                 {
-                    "summary": "Increased speed of analysis tools by 500+%. Added reduction methods to accelerate preprocessing of large datasets.",
+                    "summary": "Increased the efficiency and speed of CNN performance analysis tools and preprocessing for large traces by 500+%.",
                     "required_skills": ["Python"]
                 },
                 {
-                    "summary": "Designed a querying system and cache for large performance datasets (50k+ points), removing dataset size limitation.",
+                    "summary": "Designed a querying system and cache for large performance datasets, enabling local analysis of datasets with 50k+ points.",
                     "required_skills": ["Python"]
                 },
                 {
-                    "summary": "Designed and implemented a time-based search engine to enable nanosecond-level analysis of CNN execution.",
+                    "summary": "Designed and implemented a time-based search engine to enable nanosecond-level analysis of on-device CNN execution.",
                     "required_skills": ["Python", "NumPy", "Pandas"]
                 }
             ]
@@ -167,23 +167,23 @@
                     "required_skills": ["C++", "Android"]
                 },
                 {
-                    "summary": "Added runtime configuration for embedded debugging infrastructure, increasing debugging speed for 40+ engineers.",
+                    "summary": "Added runtime configuration for embedded debugging infrastructure, improving debugging experience for 40+ engineers.",
                     "required_skills": ["C++"]
                 },
                 {
-                    "summary": "Created and deployed an Extract-Load-Transform (ELT) pipeline to analyze processor performance on AI workloads.",
+                    "summary": "Created and deployed an Extract-Load-Transform (ELT) pipeline to analyze processor performance on AI-based workloads.",
                     "required_skills": ["Python"]
                 },
                 {
-                    "summary": "Integrated data transmission features into production code, wrote tests to verify thread-safety and scalability.",
+                    "summary": "Integrated embedded data transmission features into production code, wrote tests to evaluate thread-safety and scalability.",
                     "required_skills": ["C++", "Android"]
                 },
                 {
-                    "summary": "Used a data-driven approach to speed up Inter-Process Communication (IPC) for an embedded AI accelerator by 50%.",
+                    "summary": "Used a data-driven approach to accelerate Inter-Process Communication (IPC) for ML-based image processing by 50%.",
                     "required_skills": ["C++", "Python"]
                 },
                 {
-                    "summary": "Implemented infrastructure to collect performance metrics for 5+ embedded AI-based image processing use cases.",
+                    "summary": "Implemented infrastructure to collect performance measurements for 5+ embedded ML-based image processing pipelines.",
                     "required_skills": ["C++"]
                 }
             ]
@@ -206,11 +206,11 @@
             ],
             "description": [
                 {
-                    "summary": "Implemented, tested, and deployed an ML model to recommend code reviewers for pull requests, serving 3600+ users.",
+                    "summary": "Implemented, tested, and deployed a recommendation system to match code reviewers to pull requests, serving 3600+ users.",
                     "required_skills": ["Python", "Scikit-learn", "NumPy", "Pandas"]
                 },
                 {
-                    "summary": "Optimized Natural Language Processing (NLP) pipelines for customer service chatbots, increasing accuracy to 99%.",
+                    "summary": "Optimized Natural Language Understanding (NLU) pipelines for customer service chatbots, increasing accuracy to 99%.",
                     "required_skills": ["Docker"]
                 },
                 {
@@ -218,7 +218,7 @@
                     "required_skills": ["Docker"]
                 },
                 {
-                    "summary": "Created RESTful APIs to convert chatbot responses to HTML and JSON, accelerating UI/UX development by 2x.",
+                    "summary": "Created RESTful APIs to convert chatbot responses to HTML and JSON, accelerating chatbot UI/UX development by 2x.",
                     "required_skills": ["Python"]
                 }
             ]
@@ -244,15 +244,15 @@
             ],
             "description": [
                 {
-                    "summary": "Developed a Recurrent Neural Network (RNN)-based model to detect anomalies in router telemetry data.",
+                    "summary": "Developed a Recurrent Neural Network (RNN)-based model to detect and report anomalies in router telemetry data.",
                     "required_skills": ["Python", "TensorFlow"]
                 },
                 {
-                    "summary": "Wrote automated unit tests for 5+ SRv6 features, ensuring correctness and scalability across network topologies.",
+                    "summary": "Wrote automated unit tests for 5+ SRv6 features, ensuring correctness and scalability across various network topologies.",
                     "required_skills": ["Python"]
                 },
                 {
-                    "summary": "Constructed RESTful APIs to collect and preprocess 60+ SRv6 telemetry metrics using YANG.",
+                    "summary": "Constructed RESTful APIs to collect and preprocess 60+ SRv6 telemetry metrics, improving automated testing capabilities.",
                     "required_skills": ["Python"]
                 },
                 {
@@ -275,7 +275,7 @@
             ],
             "description": [
                 {
-                    "summary": "Designed a deep reinforcement learning model to trade stocks using sentiment analysis and price predictions.",
+                    "summary": "Designed a deep reinforcement learning model to trade stocks using sentiment analysis, price trends and technical indicators.",
                     "required_skills": []
                 }
             ]

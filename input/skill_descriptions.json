@@ -15,5 +15,6 @@
     "datadog": "analytics dashboard and infrastructure monitoring service",
     "numpy": "library enabling computations and data processing in python",
     "pandas": "library enabling the use of tables and data processing in python",
-    "jenkins": "platform enabling automated testing and deployment"
+    "jenkins": "platform enabling automated testing and deployment",
+    "elasticsearch": "distributed database" 
 }
