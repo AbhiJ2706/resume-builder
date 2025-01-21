@@ -37,6 +37,9 @@ class KeywordExtractor:
                         current.append(token)
         
         return results
+
+    def __token_matcher():
+        pass
     
     def __reconstruct_keywords(self, tokens):
         decoded = [TRANSFORMER_TOKENIZER.decode(result) for result in tokens]
@@ -66,7 +69,7 @@ class KeywordExtractor:
                 true_results[-1] += token
                 if last_token_was_added_slash and len(true_results) >= 2:
                     true_results[-2] += token
-            elif token == "-":
+            elif token.endswith("-"):
                 true_results[-1] += token
                 if last_token_was_added_slash and len(true_results) >= 2:
                     true_results[-2] += token
@@ -90,18 +93,17 @@ class KeywordExtractor:
                 true_results.append(token)
         
         return true_results
-
-
-    def get_keywords(self, text, lowercase=True):
+    
+    def get_keywords(self, text):
         inputs = TRANSFORMER_TOKENIZER.encode(text, return_tensors="pt")
         outputs = TRANSFORMER_LLM(inputs)
 
         relevant_tokens = self.__get_relevant_tokens(inputs[0], outputs.logits.argmax(-1)[0])
+
         reconstructed_tokens = self.__reconstruct_keywords(relevant_tokens)
         
         keywords = set(list(filter(lambda x: len(x) > 1 or x.lower() == "c", reconstructed_tokens)))
-        if lowercase:
-            keywords = set(list(map(lambda x: x.lower(), keywords)))
+        keywords = set(list(map(lambda x: x.lower(), keywords)))
         
         if not keywords:
             used_fallback = True
@@ -114,4 +116,11 @@ class KeywordExtractor:
             f.write("\n".join(keywords | {"*** Fallback used ***" if used_fallback else "*** Fallback not used ***"}))
 
         return keywords
-    
+
+
+if __name__ == "__main__":
+    def read_posting():
+        with open("input/posting.txt", "r+") as f:
+            return f.read()
+
+    print(KeywordExtractor().get_keywords(read_posting()))
