@@ -156,6 +156,12 @@ class JakesDefaultWithSkills(LatexTemplate):
         )
         
         return extracurricular
+    
+    def build_projects(self, projects):
+        return ""
+    
+    def build_project_entry(self, project):
+        return ""
 
     @property
     def preamble(self):
@@ -180,7 +186,7 @@ class JakesDefaultWithSkills(LatexTemplate):
             "technologies": resume["frameworks"], 
             "domains": resume["info"]["domains"]
         })
-        doc += self.build_experience(resume["experience"])
+        doc += self.build_experiences(resume["experience"])
         doc += self.build_extracurriculars(resume["extracurriculars"])
         doc += self.build_education()
 

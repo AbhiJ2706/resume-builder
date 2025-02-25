@@ -7,7 +7,7 @@ from transformers import BertTokenizer, BertModel
 
 import json
 
-from resume_builder.keyword_extractor import KeywordExtractor
+from resume_builder.keyword_extractor import get_keywords
 
 
 NLP = spacy.load("en_core_web_lg")
@@ -88,5 +88,5 @@ class JobPosting:
         return self.__get_keywords(self.raw_posting)
     
     def __get_keywords(self, text):
-        return KeywordExtractor().get_keywords(text)
+        return get_keywords(text)
     

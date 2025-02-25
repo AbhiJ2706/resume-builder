@@ -56,7 +56,7 @@ post-install-commands = [
   "python -m spacy download en_core_web_lg",
 ]
 [tool.hatch.envs.default.scripts]
-test = "pytest -rP {args:tests}"
+test = "pytest -rPs {args:tests}"
 test-cov = "coverage run -m pytest {args:tests}"
 cov-report = [
   "- coverage combine",

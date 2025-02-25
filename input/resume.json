@@ -17,6 +17,26 @@
     },
     "experience": [
         {
+            "company": "University of Waterloo",
+            "location": "Waterloo, ON",
+            "position": "Undergraduate Research Assistant",
+            "domain": "AI/ML Research",
+            "duration": "January 2025 - Present",
+            "languages": [
+                "Python"
+            ],
+            "frameworks": [
+                "TensorFlow", 
+                "PyTorch"
+            ],
+            "description": [
+                {
+                    "summary": "Implementing a system to detect pump-and-dump schemes using sentiment analysis and price trend predictions.",
+                    "required_skills": []
+                }
+            ]
+        },
+        {
             "company": "BetterUp",
             "location": "San Francisco, CA",
             "position": "Machine Learning Engineering Intern",
@@ -215,7 +235,7 @@
                     "required_skills": ["Docker"]
                 },
                 {
-                    "summary": "Performed Docker image optimizations to reduce the Cisco customer service chatbot's memory use by 90+%, saving $35,000+/year.",
+                    "summary": "Performed Docker image optimizations to reduce Cisco's service chatbot memory use by 90+%, saving $35,000+/year.",
                     "required_skills": ["Docker"]
                 },
                 {
@@ -264,6 +284,22 @@
         }
     ],
     "extracurriculars": [
+        {
+            "organization": "University of Waterloo Bracket Bot Hackathon",
+            "location": "Waterloo, ON",
+            "duration": "Feb 2025",
+            "technologies": [
+                "Python",
+                "LLMs",
+                "ROS"
+            ],
+            "description": [
+                {
+                    "summary": "Developed a pipeline based on LLMs and MQTT to control a robot's driving motions using voice controls",
+                    "required_skills": []
+                }
+            ]
+        },
         {
             "organization": "WAT.ai",
             "location": "Waterloo, ON",
