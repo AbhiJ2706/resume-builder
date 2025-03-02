@@ -3,7 +3,7 @@ from textwrap import dedent as td
 from resume_builder.templates.template import LatexTemplate
 
 
-class JakesDefaultWithSkills(LatexTemplate):
+class JakesDefault(LatexTemplate):
     def _build_header(self, info):
         name = f"{info['firstname']} {info['lastname']}"
         phone = info["phone"]
@@ -63,8 +63,8 @@ class JakesDefaultWithSkills(LatexTemplate):
         experience = td(
             fr"""
                     \resumeSubheading
-                        {{{position['company']} -- {position['location']}}}{{{position['duration']}}}
-                        {{{position['position']}}}{{{', '.join(position['technologies'])}}}
+                        {{{position['position']}}}{{{position['location']}}}
+                        {{{position['company']}}}{{{position['duration']}}}
             """
         )
 
@@ -186,10 +186,10 @@ class JakesDefaultWithSkills(LatexTemplate):
             "technologies": resume["frameworks"], 
             "domains": resume["info"]["domains"]
         })
+        doc += self.build_education(None)
         doc += self.build_experiences(resume["experience"])
         doc += self.build_extracurriculars(resume["extracurriculars"])
-        doc += self.build_education(None)
-
+        
         doc += r"\end{document}"
 
         return doc

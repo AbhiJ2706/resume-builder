@@ -31,7 +31,7 @@
             ],
             "description": [
                 {
-                    "summary": "Implementing a system to detect pump-and-dump schemes using sentiment analysis and price trend predictions.",
+                    "summary": "Implementing a system to detect cryptocurrency pump-and-dump schemes using sentiment and price trend analysis.",
                     "required_skills": []
                 }
             ]

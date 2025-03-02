@@ -4,7 +4,7 @@ from resume_builder.templates.template import LatexTemplate
 
 
 class Figtree(LatexTemplate):
-    def build_header(self, info):
+    def _build_header(self, info):
         name = f"{info['firstname']} {info['lastname']}"
         phone = info["phone"]
         email = info["email"]
@@ -34,7 +34,7 @@ class Figtree(LatexTemplate):
             """
         )
 
-    def build_skills(self, info):
+    def _build_skills(self, info):
         return td(
             fr"""
             \begin{{itemize}}[leftmargin=0.15in, label={{}}]
@@ -47,7 +47,7 @@ class Figtree(LatexTemplate):
             """
         )
 
-    def build_education(self):
+    def _build_education(self, info):
         return td(
             r"""
             \section{\blue{Education}}
@@ -59,7 +59,7 @@ class Figtree(LatexTemplate):
             """
         )
     
-    def build_experience_position(self, position):
+    def _build_experience_position(self, position):
         experience = td(
             fr"""
                     \resumeSubheading
@@ -89,7 +89,7 @@ class Figtree(LatexTemplate):
 
         return experience
 
-    def build_experiences(self, experience_json):
+    def _build_experiences(self, experience_json):
         experience = td(
             r"""
             \section{\blue{Experience}}
@@ -98,7 +98,7 @@ class Figtree(LatexTemplate):
         )
 
         for exp in experience_json:
-            experience += self.build_experience_position(exp)
+            experience += self._build_experience_position(exp)
             
         experience += td(
             r"""
@@ -108,7 +108,7 @@ class Figtree(LatexTemplate):
         
         return experience
     
-    def build_extracurricular_position(self, position):
+    def _build_extracurricular_position(self, position):
         extracurricular = td(
             fr"""
                     \resumeSubheading
@@ -138,7 +138,7 @@ class Figtree(LatexTemplate):
 
         return extracurricular
 
-    def build_extracurriculars(self, extracurricular_json):
+    def _build_extracurriculars(self, extracurricular_json):
         extracurricular = td(
             r"""
             \section{\blue{Extracurriculars}}
@@ -147,7 +147,7 @@ class Figtree(LatexTemplate):
         )
 
         for exp in extracurricular_json:
-            extracurricular += self.build_extracurricular_position(exp)
+            extracurricular += self._build_extracurricular_position(exp)
         
         extracurricular += td(
             r"""
@@ -157,10 +157,10 @@ class Figtree(LatexTemplate):
         
         return extracurricular
     
-    def build_projects(self, projects):
+    def _build_projects(self, projects):
         return ""
     
-    def build_project_entry(self, project):
+    def _build_project_entry(self, project):
         return ""
 
     @property
@@ -190,7 +190,7 @@ class Figtree(LatexTemplate):
         })
         doc += self.build_experiences(resume["experience"])
         doc += self.build_extracurriculars(resume["extracurriculars"])
-        doc += self.build_education()
+        doc += self.build_education(None)
 
         doc += r"\end{document}"
 

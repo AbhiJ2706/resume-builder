@@ -1,50 +1,80 @@
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase import pdfmetrics
+
 from abc import ABC, abstractmethod
 
 import json
 import os
-import stat
 
 
 class LatexTemplate(ABC):
-    @abstractmethod
     def build_header(self, info):
-        pass
-
-    @abstractmethod
+        return self._build_header(info)
+    
     def build_skills(self, info):
-        pass
-
-    @abstractmethod
+        return self._build_skills(info)
+    
     def build_education(self, info):
+        return self._build_education(info)
+    
+    def build_experiences(self, experiences):
+        return self._build_experiences(experiences)
+    
+    def build_extracurriculars(self, extracurriculars):
+        return self._build_extracurriculars(extracurriculars)
+
+    def build_projects(self, project):
+        return self._build_projects(project)
+
+    @abstractmethod
+    def _build_header(self, info):
         pass
 
     @abstractmethod
-    def build_experiences(self, experiences):
+    def _build_skills(self, info):
+        pass
+
+    @abstractmethod
+    def _build_education(self, info):
+        pass
+
+    @abstractmethod
+    def _build_experiences(self, experiences):
         pass
     
     @abstractmethod
-    def build_extracurriculars(self, extracurriculars):
+    def _build_extracurriculars(self, extracurriculars):
         pass
 
     @abstractmethod
-    def build_projects(self, projects):
+    def _build_projects(self, projects):
         pass
 
     @abstractmethod
-    def build_experience_position(self, position):
+    def _build_experience_position(self, position):
         pass
 
     @abstractmethod
-    def build_extracurricular_position(self, position):
+    def _build_extracurricular_position(self, position):
         pass
 
     @abstractmethod
-    def build_project_entry(self, project):
+    def _build_project_entry(self, project):
         pass
     
     @abstractmethod
     def _build_doc(self, preamble, resume):
         pass
+
+    # @property
+    # @abstractmethod
+    # def font_name(self):
+    #     pass
+
+    # @property
+    # @abstractmethod
+    # def font_path(self):
+    #     pass
 
     @property
     @abstractmethod
@@ -74,3 +104,11 @@ class LatexTemplate(ABC):
             "artifacts/render.sh", 
             0o777
         )
+    
+    def get_text_width(self, text):
+        pdfmetrics.registerFont(TTFont(self.font_name, self.font_path))
+        return pdfmetrics.stringWidth(text, self.font_name, self.font_path)
+
+    def points_to_inches(self, points):
+        return points / 72.0
+
