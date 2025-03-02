@@ -3,9 +3,10 @@
 ## Usage
 
 - Install `hatch`
-- In `latex_builder.py`, update the `build_header` function latex to include your details.
-- In `latex_builder.py`, update the `build_skills` function latex to include the relevant domains (this will not be required in the future).
-- In `latex_builder.py`, update the `build_education` function latex to include your education details.
+- In either `templates/jakes_default.py` or `templates/figtree.py`:
+  - Update the `_build_header` function latex to include your details.
+  - Update the `_build_skills` function latex to include the relevant domains (this will not be required in the future).
+  - Update the `_build_education` function latex to include your education details.
 - Replace the resume JSON with your own. Format must match example. You can do this using a prompt.
 - Put your job posting in `input/posting.txt`.
 - Run `hatch run run-latex [company name] [theme name]` where theme name is one of `jakes_default` or `figtree`.
