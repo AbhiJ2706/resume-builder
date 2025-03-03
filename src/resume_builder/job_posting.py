@@ -1,9 +1,7 @@
 import nltk.data
 import spacy
-import torch
 
-from torch.nn.functional import cosine_similarity
-from transformers import BertTokenizer, BertModel
+from sentence_transformers import SentenceTransformer
 
 import json
 
@@ -13,10 +11,7 @@ from resume_builder.keyword_extractor import get_keywords
 NLP = spacy.load("en_core_web_lg")
 SENTENCE_TOKENIZER = nltk.data.load('tokenizers/punkt/english.pickle')
 
-EMBEDDING_MODEL_NAME = "jjzha/jobbert-base-cased"
-
-EMBEDDING_TOKENIZER = BertTokenizer.from_pretrained(EMBEDDING_MODEL_NAME)
-EMBEDDING_MODEL = BertModel.from_pretrained(EMBEDDING_MODEL_NAME)
+EMBEDDING_MODEL = SentenceTransformer("jensjorisdecorte/JobBERT-v2")
 
 
 class JobPosting:
@@ -31,11 +26,9 @@ class JobPosting:
     def rank_point(self, point):
         string_embedding = self.__embedding(point)
 
-        # return max([
-        #     self.__similarity(string_embedding, sentence_embedding) for sentence_embedding in self.embedding
-        # ])
-
-        return self.__similarity(string_embedding, self.embedding)
+        return max([
+            self.__similarity(string_embedding, sentence_embedding) for sentence_embedding in self.embedding
+        ])
     
     def rank_keywords(self, keywords, required=set()):
         return sorted([(kw, self.__keyword_score(kw, required)) for kw in keywords], key=lambda x: x[1], reverse=True)
@@ -53,10 +46,7 @@ class JobPosting:
         return result
     
     def __calc_embedding(self, text):
-        inputs = EMBEDDING_TOKENIZER(text, return_tensors='pt', truncation=True, padding=True)
-        with torch.no_grad():
-            outputs = EMBEDDING_MODEL(**inputs)
-        return outputs.last_hidden_state.mean(dim=1)
+        return EMBEDDING_MODEL.encode(text)
     
     def __embedding(self, x):
         if self.cache.get(x) is not None:
@@ -66,7 +56,7 @@ class JobPosting:
         return embedding
 
     def __similarity(self, x, y):
-        return cosine_similarity(x, y)
+        return EMBEDDING_MODEL.similarity(x, y)
 
     def __keyword_score(self, kw, required):
         if kw in required:
@@ -81,8 +71,7 @@ class JobPosting:
             return max([self.__similarity(kw_embedding, self.__embedding(k)) for k in self.keywords])
 
     def __get_posting_embedding(self):
-        # return list(map(self.__embedding, self.sentences))
-        return self.__embedding(self.raw_posting)
+        return list(map(self.__embedding, self.sentences))
 
     def __get_posting_keywords(self):
         return self.__get_keywords(self.raw_posting)
