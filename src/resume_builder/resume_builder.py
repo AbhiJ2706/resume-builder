@@ -6,7 +6,7 @@ from collections import Counter
 from resume_builder.job_posting import JobPosting
 
 
-def rank_whole_point(posting, section):
+def rank_whole_point(posting: JobPosting, section):
     section_string = "\n".join(
         [f"{section['organization']} ({section['location']}) [{', '.join(section['technologies'])}]"] +
         list(map(
@@ -28,19 +28,15 @@ def top_k_points(posting, resume_points, k=3):
 
     for i, point in enumerate(resume_points):
         similarity_score = posting.rank_point(point["summary"])
-
-        sim_points.append((similarity_score, point, i))
+        sim_points.append((similarity_score, point))
     
     result = list(map(
-        lambda x: x[1], 
+        lambda x: x[1],
         sorted(
-            sorted(
-                sim_points, 
-                key=lambda x: x[0], 
-                reverse=True
-            )[:k], 
-            key=lambda x: x[2]
-        )
+            sim_points, 
+            key=lambda x: x[0], 
+            reverse=True
+        )[:k]
     ))
     
     return result
@@ -88,9 +84,10 @@ def read_posting():
         return f.read()
 
 
-def get_points(posting, resume):
+def build_resume(posting, resume):
     languages = Counter()
     frameworks = Counter()
+    
     for job in resume["experience"]:
         job["description"] = top_k_points(posting, job["description"])
         required_skills = set(sum(map(lambda x: x["required_skills"], job["description"]), start=[]))
@@ -98,7 +95,6 @@ def get_points(posting, resume):
         job["technologies"], used_payload = get_skills(posting, job["languages"], job["frameworks"], required=required_skills)
         del job["languages"]
         del job["frameworks"]
-
         languages.update(used_payload["languages"])
         frameworks.update(used_payload["frameworks"])
     
@@ -139,4 +135,4 @@ if __name__ == "__main__":
     logging.basicConfig(filename='artifacts/log.log', level=logging.ERROR)
 
     posting = JobPosting(read_posting())
-    get_points(posting, read_resume())
+    build_resume(posting, read_resume())
