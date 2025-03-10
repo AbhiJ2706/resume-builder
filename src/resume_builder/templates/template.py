@@ -66,15 +66,15 @@ class LatexTemplate(ABC):
     def _build_doc(self, preamble, resume):
         pass
 
-    # @property
-    # @abstractmethod
-    # def font_name(self):
-    #     pass
+    @property
+    @abstractmethod
+    def font_name(self):
+        pass
 
-    # @property
-    # @abstractmethod
-    # def font_path(self):
-    #     pass
+    @property
+    @abstractmethod
+    def font_path(self):
+        pass
 
     @property
     @abstractmethod
