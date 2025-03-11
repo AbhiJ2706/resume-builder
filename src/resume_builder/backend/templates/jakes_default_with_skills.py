@@ -1,10 +1,9 @@
-import subprocess
 from textwrap import dedent as td
 
-from resume_builder.templates.template import LatexTemplate
+from resume_builder.backend.templates.template import LatexTemplate
 
 
-class WorkdayDefault(LatexTemplate):
+class JakesDefaultWithSkills(LatexTemplate):
     def _build_header(self, info):
         name = f"{info['firstname']} {info['lastname']}"
         phone = info["phone"]
@@ -75,8 +74,8 @@ class WorkdayDefault(LatexTemplate):
         text = td(
             fr"""
                     \resumeSubheading
-                        {{{position['position']}}}{{{position['location']}}}
-                        {{{position['organization']}}}{{{self.resolve_date(position['start'], position['end'])}}}
+                        {{{position['organization']} -- {position['location']}}}{{{self.resolve_date(position['start'], position['end'])}}}
+                        {{{position['position']}}}{{{', '.join(position['skills'])}}}
             """
         )
 
@@ -208,12 +207,12 @@ class WorkdayDefault(LatexTemplate):
             "extra_skills": resume["extra_skills"],
             **resume["info"]
         })
-        doc += self.build_education(resume["info"])
         for section in resume["sections"]:
             if section["name"] in self.get_major_sections():
                 doc += self.build_major_section(section["name"], section["items"])
             else:
                 doc += self.build_minor_section(section["name"], section["items"])
+        doc += self.build_education(resume["info"])
 
         doc += r"\end{document}"
 
