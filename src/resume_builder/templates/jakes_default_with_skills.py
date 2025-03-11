@@ -182,7 +182,7 @@ class JakesDefaultWithSkills(LatexTemplate):
     
     @property
     def margin(self):
-        return 1
+        return 1.75
 
     @property
     def preamble(self):

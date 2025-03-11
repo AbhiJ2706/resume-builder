@@ -36,133 +36,154 @@ class WorkdayDefault(LatexTemplate):
         )
 
     def _build_skills(self, info):
+        core_skills = self.truncate(info['core_skills'], fmt=lambda x: ', '.join(x) + '.')
+        extra_skills = self.truncate(info['extra_skills'], fmt=lambda x: ', '.join(x) + '.')
+        domains = self.truncate(info['domains'], fmt=lambda x: ', '.join(x) + '.')
         return td(
             fr"""
             \begin{{itemize}}[leftmargin=0.15in, label={{}}]
                 \small{{\item{{
-                    \textbf{{Languages}}{{: {', '.join(info['languages']) + '.'}}} \\
-                    \textbf{{Technologies}}{{: {', '.join(info['technologies']) + '.'}}} \\
-                    \textbf{{Domains}}{{: {', '.join(info['domains']) + '.'}}} \\
+                    \textbf{{{info['core_skill_label']}}}{{: {', '.join(core_skills) + '.'}}} \\
+                    \textbf{{{info['extra_skill_label']}}}{{: {', '.join(extra_skills) + '.'}}} \\
+                    \textbf{{{info['domain_label']}}}{{: {', '.join(domains) + '.'}}} \\
                 }}}}
             \end{{itemize}}
             """
         )
 
     def _build_education(self, info):
+        degree_finished = " (Expected)" if not info['education']['completed'] else ""
+        relevant_coursework = td(fr"""\
+                    \resumeItemListStart
+                        \resumeItem{{Relevant Coursework: {info['education']['relevant_coursework']}.}}
+                    \resumeItemListEnd
+                    """
+        ).replace("%", "\\%").replace("$", "\\$") if info['education']['relevant_coursework'] != "" else ""
         return td(
-            r"""
-            \section{Education}
+            fr"""
+            \section{{Education}}
                 \resumeSubHeadingListStart
                     \resumeSubheading
-                    {University of Waterloo}{Waterloo, ON}
-                    {Bachelor of Computer Science with AI Specialization (Honors, Co-op)}{Sep. 2020-- May 2025 (Expected)}
+                    {{{info['education']['institution']}}}{{{info['education']['institution_location']}}}
+                    {{{info['education']['degree_name']}}}{{{self.resolve_date(info['education']['start'], info['education']['end'])}{degree_finished}}}
+                    {relevant_coursework}
                 \resumeSubHeadingListEnd
             """
         )
     
-    def _build_experience_position(self, position):
-        experience = td(
+    def _build_major_position(self, position):
+        text = td(
             fr"""
                     \resumeSubheading
-                        {{{position['position']}}}{{{position['duration']}}}
-                        {{{position['company']} | {position['location']}}}{{{', '.join(position['technologies'])}}}
+                        {{{position['position']}}}{{{position['location']}}}
+                        {{{position['organization']}}}{{{self.resolve_date(position['start'], position['end'])}}}
             """
         )
 
-        experience += td(
+        text += td(
             r"""
                         \resumeItemListStart
             """
         )
 
         for point in position["description"]:
-            experience += td(
+            text += td(
                 fr"""
                                 \resumeItem{{{point}}}
                 """.replace("%", "\\%").replace("$", "\\$")
             )
         
-        experience += td(
+        text += td(
             r"""
                         \resumeItemListEnd
             """
         )
 
-        return experience
+        return text
 
-    def _build_experiences(self, experience_json):
-        experience = td(
-            r"""
-            \section{Experience}
+    def _build_major_section(self, name, info):
+        text = td(
+            fr"""
+            \section{{{name}}}
                 \resumeSubHeadingListStart
             """
         )
 
-        for exp in experience_json:
-            experience += self._build_experience_position(exp)
-        
-        experience += td(
+        for exp in info:
+            text += self._build_major_position(exp)
+            
+        text += td(
             r"""
                     \resumeSubHeadingListEnd
             """
         )
         
-        return experience
+        return text
     
-    def _build_extracurricular_position(self, position):
-        extracurricular = td(
+    def _build_minor_position(self, position):
+        text = td(
             fr"""
                     \resumeSubheading
-                        {{{position['organization']}}}{{{position['duration']}}}
-                        {{{position['location']}}}{{{', '.join(position['technologies'])}}}
+                        {{{position['organization']}}}{{{self.resolve_date(position['start'], position['end'])}}}
+                        {{{position['location']}}}{{{', '.join(position['skills'])}}}
             """
         )
 
-        extracurricular += td(
+        text += td(
             r"""
                         \resumeItemListStart
             """
         )
 
         for point in position["description"]:
-            extracurricular += td(
+            text += td(
                 fr"""
                                 \resumeItem{{{point}}}
                 """.replace("%", "\\%").replace("$", "\\$")
             )
         
-        extracurricular += td(
+        text += td(
             r"""
                         \resumeItemListEnd
             """
         )
 
-        return extracurricular
+        return text
 
-    def _build_extracurriculars(self, extracurricular_json):
-        extracurricular = td(
-            r"""
-            \section{Extracurriculars}
+    def _build_minor_section(self, name, info):
+        text = td(
+            fr"""
+            \section{{{name}}}
                 \resumeSubHeadingListStart
             """
         )
 
-        for exp in extracurricular_json:
-            extracurricular += self._build_extracurricular_position(exp)
+        for exp in info:
+            text += self._build_minor_position(exp)
         
-        extracurricular += td(
+        text += td(
             r"""
                     \resumeSubHeadingListEnd
             """
         )
         
-        return extracurricular
+        return text
     
-    def _build_projects(self, projects):
-        return ""
+    @property
+    def font_name(self):
+        return "Computer Modern"
+
+    @property
+    def font_path(self):
+        return "fonts/Computer Modern/cmunrm.ttf"
     
-    def _build_project_entry(self, project):
-        return ""
+    @property
+    def font_size(self):
+        return 9.5
+    
+    @property
+    def margin(self):
+        return 1.75
 
     @property
     def preamble(self):
@@ -178,18 +199,21 @@ class WorkdayDefault(LatexTemplate):
             """
         )
 
-    def _build_doc(self, preamble, resume):
-        doc = preamble
+    def _build_doc(self, resume):
+        doc = self.preamble
 
         doc += self.build_header(resume["info"])
         doc += self.build_skills({
-            "languages": resume["languages"],
-            "technologies": resume["frameworks"], 
-            "domains": resume["info"]["domains"]
+            "core_skills": resume["core_skills"],
+            "extra_skills": resume["extra_skills"],
+            **resume["info"]
         })
-        doc += self.build_experiences(resume["experience"])
-        doc += self.build_extracurriculars(resume["extracurriculars"])
-        doc += self.build_education(None)
+        doc += self.build_education(resume["info"])
+        for section in resume["sections"]:
+            if section["name"] in self.get_major_sections():
+                doc += self.build_major_section(section["name"], section["items"])
+            else:
+                doc += self.build_minor_section(section["name"], section["items"])
 
         doc += r"\end{document}"
 

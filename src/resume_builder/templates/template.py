@@ -112,13 +112,13 @@ class LatexTemplate(ABC):
         )
 
     def truncate(self, l, fmt=lambda x: ' '.join(x)):
-        while self.get_text_width(fmt(l)) >= 8:
+        while self.get_text_width(fmt(l)) > 8.5:
             del l[-1]
         return l
     
     def get_text_width(self, text):
         pdfmetrics.registerFont(TTFont(self.font_name, self.font_path))
-        return self.__points_to_inches(pdfmetrics.stringWidth(text, self.font_name, self.font_size)) + 2 * self.margin
+        return self.__points_to_inches(pdfmetrics.stringWidth(text, self.font_name, self.font_size)) + self.margin
 
     def __points_to_inches(self, points):
         return points / 72.0
