@@ -70,8 +70,8 @@ class JakesDefaultWithSkills(LatexTemplate):
             """
         )
     
-    def _build_experience_position(self, position):
-        experience = td(
+    def _build_major_position(self, position):
+        text = td(
             fr"""
                     \resumeSubheading
                         {{{position['organization']} -- {position['location']}}}{{{self.resolve_date(position['start'], position['end'])}}}
@@ -79,48 +79,48 @@ class JakesDefaultWithSkills(LatexTemplate):
             """
         )
 
-        experience += td(
+        text += td(
             r"""
                         \resumeItemListStart
             """
         )
 
         for point in position["description"]:
-            experience += td(
+            text += td(
                 fr"""
                                 \resumeItem{{{point}}}
                 """.replace("%", "\\%").replace("$", "\\$")
             )
         
-        experience += td(
+        text += td(
             r"""
                         \resumeItemListEnd
             """
         )
 
-        return experience
+        return text
 
-    def _build_experiences(self, experience_json):
-        experience = td(
-            r"""
-            \section{Experience}
+    def _build_major_section(self, name, info):
+        text = td(
+            fr"""
+            \section{{{name}}}
                 \resumeSubHeadingListStart
             """
         )
 
-        for exp in experience_json:
-            experience += self._build_experience_position(exp)
+        for exp in info:
+            text += self._build_major_position(exp)
             
-        experience += td(
+        text += td(
             r"""
                     \resumeSubHeadingListEnd
             """
         )
         
-        return experience
+        return text
     
     def _build_minor_position(self, position):
-        extracurricular = td(
+        text = td(
             fr"""
                     \resumeSubheading
                         {{{position['organization']}}}{{{self.resolve_date(position['start'], position['end'])}}}
@@ -128,45 +128,45 @@ class JakesDefaultWithSkills(LatexTemplate):
             """
         )
 
-        extracurricular += td(
+        text += td(
             r"""
                         \resumeItemListStart
             """
         )
 
         for point in position["description"]:
-            extracurricular += td(
+            text += td(
                 fr"""
                                 \resumeItem{{{point}}}
                 """.replace("%", "\\%").replace("$", "\\$")
             )
         
-        extracurricular += td(
+        text += td(
             r"""
                         \resumeItemListEnd
             """
         )
 
-        return extracurricular
+        return text
 
-    def _build_minor_section(self, extracurricular_json):
-        extracurricular = td(
-            r"""
-            \section{Extracurriculars}
+    def _build_minor_section(self, name, info):
+        text = td(
+            fr"""
+            \section{{{name}}}
                 \resumeSubHeadingListStart
             """
         )
 
-        for exp in extracurricular_json:
-            extracurricular += self._build_minor_position(exp)
+        for exp in info:
+            text += self._build_minor_position(exp)
         
-        extracurricular += td(
+        text += td(
             r"""
                     \resumeSubHeadingListEnd
             """
         )
         
-        return extracurricular
+        return text
     
     @property
     def font_name(self):
@@ -207,9 +207,11 @@ class JakesDefaultWithSkills(LatexTemplate):
             "extra_skills": resume["extra_skills"],
             **resume["info"]
         })
-        doc += self.build_experiences(resume["experience"])
-        for key in self.get_minor_keys(resume):
-            doc += self.build_minor_section(resume[key])
+        for section in resume["sections"]:
+            if section["name"] in self.get_major_sections():
+                doc += self.build_major_section(section["name"], section["items"])
+            else:
+                doc += self.build_minor_section(section["name"], section["items"])
         doc += self.build_education(resume["info"])
 
         doc += r"\end{document}"

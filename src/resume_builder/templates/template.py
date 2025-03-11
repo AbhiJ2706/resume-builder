@@ -17,14 +17,14 @@ class LatexTemplate(ABC):
     def build_education(self, info):
         return self._build_education(info)
     
-    def build_experiences(self, experiences):
-        return self._build_experiences(experiences)
+    def build_major_section(self, name, info):
+        return self._build_major_section(name, info)
     
-    def build_minor_section(self, info):
-        return self._build_minor_section(info)
-
-    def get_minor_keys(self, resume):
-        return list(filter(lambda x: x not in ["core_skills", "extra_skills", "info", "experience"], resume.keys()))
+    def build_minor_section(self, name, info):
+        return self._build_minor_section(name, info)
+    
+    def get_major_sections(self):
+        return ["experience"]
     
     def resolve_date(self, start, end):
         return start if start == end else f"{start} - {end}"
@@ -43,15 +43,15 @@ class LatexTemplate(ABC):
         pass
 
     @abstractmethod
-    def _build_experiences(self, experiences):
+    def _build_major_section(self, name, info):
         pass
     
     @abstractmethod
-    def _build_minor_section(self, info):
+    def _build_minor_section(self, name, info):
         pass
 
     @abstractmethod
-    def _build_experience_position(self, position):
+    def _build_major_position(self, position):
         pass
 
     @abstractmethod

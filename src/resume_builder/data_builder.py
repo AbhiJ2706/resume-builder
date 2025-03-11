@@ -111,10 +111,15 @@ def build_resume(posting, resume):
     extra_skills = Counter()
 
     new_resume = dict(info=copy.deepcopy(resume["info"]))
+    new_resume["sections"] = []
 
     for section in resume["sections"]:
-        new_resume[section["name"]], temp_core_skills, temp_extra_skills = \
+        new_section, temp_core_skills, temp_extra_skills = \
             build_section(posting, section["items"], include=section["include"], k=section["num_top_points"])
+        new_resume["sections"].append({
+            "name": section["name"],
+            "items": new_section
+        })
     
         core_skills.update(temp_core_skills)
         extra_skills.update(temp_extra_skills)
