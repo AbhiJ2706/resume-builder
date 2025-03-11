@@ -35,26 +35,37 @@ class JakesDefaultWithSkills(LatexTemplate):
         )
 
     def _build_skills(self, info):
+        core_skills = self.truncate(info['core_skills'], fmt=lambda x: ', '.join(x) + '.')
+        extra_skills = self.truncate(info['extra_skills'], fmt=lambda x: ', '.join(x) + '.')
+        domains = self.truncate(info['domains'], fmt=lambda x: ', '.join(x) + '.')
         return td(
             fr"""
             \begin{{itemize}}[leftmargin=0.15in, label={{}}]
                 \small{{\item{{
-                    \textbf{{Languages}}{{: {', '.join(info['languages']) + '.'}}} \\
-                    \textbf{{Technologies}}{{: {', '.join(info['technologies']) + '.'}}} \\
-                    \textbf{{Domains}}{{: {', '.join(info['domains']) + '.'}}} \\
+                    \textbf{{{info['core_skill_label']}}}{{: {', '.join(core_skills) + '.'}}} \\
+                    \textbf{{{info['extra_skill_label']}}}{{: {', '.join(extra_skills) + '.'}}} \\
+                    \textbf{{{info['domain_label']}}}{{: {', '.join(domains) + '.'}}} \\
                 }}}}
             \end{{itemize}}
             """
         )
 
     def _build_education(self, info):
+        degree_finished = " (Expected)" if not info['education']['completed'] else ""
+        relevant_coursework = td(fr"""\
+                    \resumeItemListStart
+                        \resumeItem{{Relevant Coursework: {info['education']['relevant_coursework']}.}}
+                    \resumeItemListEnd
+                    """
+        ).replace("%", "\\%").replace("$", "\\$") if info['education']['relevant_coursework'] != "" else ""
         return td(
-            r"""
-            \section{Education}
+            fr"""
+            \section{{Education}}
                 \resumeSubHeadingListStart
                     \resumeSubheading
-                    {University of Waterloo}{Waterloo, ON}
-                    {Bachelor of Computer Science with AI Specialization (Honors, Co-op)}{Sep. 2020-- May 2025 (Expected)}
+                    {{{info['education']['institution']}}}{{{info['education']['institution_location']}}}
+                    {{{info['education']['degree_name']}}}{{{self.resolve_date(info['education']['start'], info['education']['end'])}{degree_finished}}}
+                    {relevant_coursework}
                 \resumeSubHeadingListEnd
             """
         )
@@ -63,8 +74,8 @@ class JakesDefaultWithSkills(LatexTemplate):
         experience = td(
             fr"""
                     \resumeSubheading
-                        {{{position['company']} -- {position['location']}}}{{{position['duration']}}}
-                        {{{position['position']}}}{{{', '.join(position['technologies'])}}}
+                        {{{position['organization']} -- {position['location']}}}{{{self.resolve_date(position['start'], position['end'])}}}
+                        {{{position['position']}}}{{{', '.join(position['skills'])}}}
             """
         )
 
@@ -108,12 +119,12 @@ class JakesDefaultWithSkills(LatexTemplate):
         
         return experience
     
-    def _build_extracurricular_position(self, position):
+    def _build_minor_position(self, position):
         extracurricular = td(
             fr"""
                     \resumeSubheading
-                        {{{position['organization']}}}{{{position['duration']}}}
-                        {{{position['location']}}}{{{', '.join(position['technologies'])}}}
+                        {{{position['organization']}}}{{{self.resolve_date(position['start'], position['end'])}}}
+                        {{{position['location']}}}{{{', '.join(position['skills'])}}}
             """
         )
 
@@ -138,7 +149,7 @@ class JakesDefaultWithSkills(LatexTemplate):
 
         return extracurricular
 
-    def _build_extracurriculars(self, extracurricular_json):
+    def _build_minor_section(self, extracurricular_json):
         extracurricular = td(
             r"""
             \section{Extracurriculars}
@@ -147,7 +158,7 @@ class JakesDefaultWithSkills(LatexTemplate):
         )
 
         for exp in extracurricular_json:
-            extracurricular += self._build_extracurricular_position(exp)
+            extracurricular += self._build_minor_position(exp)
         
         extracurricular += td(
             r"""
@@ -157,11 +168,21 @@ class JakesDefaultWithSkills(LatexTemplate):
         
         return extracurricular
     
-    def _build_projects(self, projects):
-        return ""
+    @property
+    def font_name(self):
+        return "Computer Modern"
+
+    @property
+    def font_path(self):
+        return "fonts/Computer Modern/cmunrm.ttf"
     
-    def _build_project_entry(self, project):
-        return ""
+    @property
+    def font_size(self):
+        return 9.5
+    
+    @property
+    def margin(self):
+        return 1
 
     @property
     def preamble(self):
@@ -177,18 +198,19 @@ class JakesDefaultWithSkills(LatexTemplate):
             """
         )
 
-    def _build_doc(self, preamble, resume):
-        doc = preamble
+    def _build_doc(self, resume):
+        doc = self.preamble
 
         doc += self.build_header(resume["info"])
         doc += self.build_skills({
-            "languages": resume["languages"],
-            "technologies": resume["frameworks"], 
-            "domains": resume["info"]["domains"]
+            "core_skills": resume["core_skills"],
+            "extra_skills": resume["extra_skills"],
+            **resume["info"]
         })
         doc += self.build_experiences(resume["experience"])
-        doc += self.build_extracurriculars(resume["extracurriculars"])
-        doc += self.build_education(None)
+        for key in self.get_minor_keys(resume):
+            doc += self.build_minor_section(resume[key])
+        doc += self.build_education(resume["info"])
 
         doc += r"\end{document}"
 

@@ -20,11 +20,15 @@ class LatexTemplate(ABC):
     def build_experiences(self, experiences):
         return self._build_experiences(experiences)
     
-    def build_extracurriculars(self, extracurriculars):
-        return self._build_extracurriculars(extracurriculars)
+    def build_minor_section(self, info):
+        return self._build_minor_section(info)
 
-    def build_projects(self, project):
-        return self._build_projects(project)
+    def get_minor_keys(self, resume):
+        return list(filter(lambda x: x not in ["core_skills", "extra_skills", "info", "experience"], resume.keys()))
+    
+    def resolve_date(self, start, end):
+        return start if start == end else f"{start} - {end}"
+
 
     @abstractmethod
     def _build_header(self, info):
@@ -43,11 +47,7 @@ class LatexTemplate(ABC):
         pass
     
     @abstractmethod
-    def _build_extracurriculars(self, extracurriculars):
-        pass
-
-    @abstractmethod
-    def _build_projects(self, projects):
+    def _build_minor_section(self, info):
         pass
 
     @abstractmethod
@@ -55,15 +55,11 @@ class LatexTemplate(ABC):
         pass
 
     @abstractmethod
-    def _build_extracurricular_position(self, position):
-        pass
-
-    @abstractmethod
-    def _build_project_entry(self, project):
+    def _build_minor_position(self, position):
         pass
     
     @abstractmethod
-    def _build_doc(self, preamble, resume):
+    def _build_doc(self, resume):
         pass
 
     @property
@@ -74,6 +70,16 @@ class LatexTemplate(ABC):
     @property
     @abstractmethod
     def font_path(self):
+        pass
+
+    @property
+    @abstractmethod
+    def font_size(self):
+        pass
+
+    @property
+    @abstractmethod
+    def margin(self):
         pass
 
     @property
@@ -96,7 +102,7 @@ class LatexTemplate(ABC):
                 open("artifacts/render.sh", "w+") as render_script:
             
             resume_json = json.loads(resume.read())
-            doc = self._build_doc(self.preamble, resume_json)
+            doc = self._build_doc(resume_json)
             final_doc.write(doc)
             render_script.write(self.render_script)
         
@@ -104,11 +110,16 @@ class LatexTemplate(ABC):
             "artifacts/render.sh", 
             0o777
         )
+
+    def truncate(self, l, fmt=lambda x: ' '.join(x)):
+        while self.get_text_width(fmt(l)) >= 8:
+            del l[-1]
+        return l
     
     def get_text_width(self, text):
         pdfmetrics.registerFont(TTFont(self.font_name, self.font_path))
-        return pdfmetrics.stringWidth(text, self.font_name, self.font_path)
+        return self.__points_to_inches(pdfmetrics.stringWidth(text, self.font_name, self.font_size)) + 2 * self.margin
 
-    def points_to_inches(self, points):
+    def __points_to_inches(self, points):
         return points / 72.0
 
