@@ -37,7 +37,10 @@ dependencies = [
     "google-auth-httplib2",
     "google-auth-oauthlib",
     "keybert",
-    "reportlab"
+    "reportlab",
+    "streamlit",
+    "validator-collection",
+    "streamlit-tags"
 ]
 
 [project.urls]
