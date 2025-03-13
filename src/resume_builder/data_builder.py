@@ -4,7 +4,7 @@ import logging
 
 from collections import Counter
 
-from resume_builder.backend.job_posting import JobPosting
+from resume_builder.job_posting import JobPosting
 
 
 def rank_whole_point(posting: JobPosting, section):

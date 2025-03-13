@@ -2,8 +2,8 @@ import textwrap
 
 import pytest
 
-from resume_builder.backend.job_posting import JobPosting
-from resume_builder.backend.data_builder import top_k_points
+from resume_builder.job_posting import JobPosting
+from resume_builder.data_builder import top_k_points
 
 
 def swe_posting():

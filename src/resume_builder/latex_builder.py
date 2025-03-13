@@ -1,7 +1,7 @@
 from importlib import import_module
 import sys
 
-from resume_builder.backend.templates.template import LatexTemplate
+from resume_builder.templates.template import LatexTemplate
 
 
 def to_camel_case(snake_str):

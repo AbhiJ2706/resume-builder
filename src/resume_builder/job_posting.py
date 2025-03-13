@@ -5,7 +5,7 @@ from sentence_transformers import SentenceTransformer
 
 import json
 
-from resume_builder.backend.keyword_extractor import get_keywords
+from resume_builder.keyword_extractor import get_keywords
 
 
 NLP = spacy.load("en_core_web_lg")

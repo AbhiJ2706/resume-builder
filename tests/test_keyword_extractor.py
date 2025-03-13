@@ -1,6 +1,6 @@
 import pytest
 
-from resume_builder.backend.keyword_extractor import __reconstruct_keywords
+from resume_builder.keyword_extractor import __reconstruct_keywords
 
 
 @pytest.fixture
