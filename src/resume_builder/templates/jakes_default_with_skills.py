@@ -1,6 +1,6 @@
 from textwrap import dedent as td
 
-from resume_builder.backend.templates.template import LatexTemplate
+from resume_builder.templates.template import LatexTemplate
 
 
 class JakesDefaultWithSkills(LatexTemplate):
