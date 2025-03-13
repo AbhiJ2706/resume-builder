@@ -4,7 +4,7 @@ from streamlit_tags import st_tags
 
 import streamlit as st
 
-from datetime import datetime
+from datetime import datetime, date
 
 import json
 
@@ -55,7 +55,7 @@ def postprocess_partial_form(partial_form):
         return {section: postprocess_partial_form(item) for (section, item) in partial_form.items()}
     elif isinstance(partial_form, list):
         return [postprocess_partial_form(item) for item in partial_form]
-    elif isinstance(partial_form, datetime):
+    elif isinstance(partial_form, date):
         return date_to_string(partial_form)
     return partial_form
 
@@ -382,7 +382,7 @@ def main():
                     "sections": copy.deepcopy(list(st.session_state.get("sections", []).values()))
                 }
                 for section in resume_data["sections"]:
-                    section["items"] = st.session_state[section["name"]]
+                    section["items"] = copy.deepcopy(st.session_state[section["name"]])
                 resume_data = validate_and_post_process(resume_data)
                 st.json(resume_data)
 

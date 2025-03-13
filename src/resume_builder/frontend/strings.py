@@ -1,5 +1,8 @@
-def date_to_string(date):
-    [
+import datetime
+
+
+def date_to_string(date: datetime.date):
+    return [
         "January",
         "February",
         "March",
