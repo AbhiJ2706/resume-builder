@@ -14,7 +14,7 @@
             "Test Automation", 
             "AI/ML Research"
         ],
-        "education": {
+        "education": [{
             "degree_name": "Bachelor of Computer Science with AI Specialization (Honors, Co-op)",
             "start": "Sep 2020",
             "end": "May 2025",
@@ -22,7 +22,15 @@
             "institution": "University of Waterloo",
             "institution_location": "Waterloo, ON",
             "relevant_coursework": ""
-        },
+        },{
+            "degree_name": "Bachelor of Computer Science with AI Specialization (Honors, Co-op)",
+            "start": "Sep 2020",
+            "end": "May 2025",
+            "completed": false,
+            "institution": "University of Waterloo",
+            "institution_location": "Waterloo, ON",
+            "relevant_coursework": ""
+        }],
         "core_skill_label": "Languages",
         "extra_skill_label": "Technologies",
         "domain_label": "Domains"

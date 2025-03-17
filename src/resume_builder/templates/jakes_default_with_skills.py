@@ -50,25 +50,43 @@ class JakesDefaultWithSkills(LatexTemplate):
             """
         )
 
-    def _build_education(self, info):
-        degree_finished = " (Expected)" if not info['education']['completed'] else ""
+    def _build_education_entry(self, info):
+        degree_finished = " (Expected)" if not info['completed'] else ""
         relevant_coursework = td(fr"""\
                     \resumeItemListStart
-                        \resumeItem{{Relevant Coursework: {info['education']['relevant_coursework']}.}}
+                        \resumeItem{{Relevant Coursework: {info['relevant_coursework']}.}}
                     \resumeItemListEnd
                     """
-        ).replace("%", "\\%").replace("$", "\\$") if info['education']['relevant_coursework'] != "" else ""
+        ).replace("%", "\\%").replace("$", "\\$") if info['relevant_coursework'] != "" else ""
+
         return td(
             fr"""
-            \section{{Education}}
+                \resumeSubheading
+                {{{info['institution']}}}{{{info['institution_location']}}}
+                {{{info['degree_name']}}}{{{self.resolve_date(info['start'], info['end'])}{degree_finished}}}
+                {relevant_coursework}
+                \vspace{{3pt}}
+            """
+        )
+
+    def _build_education_section(self, info):
+        text = td(
+            fr"""
+            \section{{\blue{{Education}}}}
                 \resumeSubHeadingListStart
-                    \resumeSubheading
-                    {{{info['education']['institution']}}}{{{info['education']['institution_location']}}}
-                    {{{info['education']['degree_name']}}}{{{self.resolve_date(info['education']['start'], info['education']['end'])}{degree_finished}}}
-                    {relevant_coursework}
+            """
+        )
+
+        for entry in info['education']:
+            text += self._build_education_entry(entry)
+
+        text += td(
+            fr"""
                 \resumeSubHeadingListEnd
             """
         )
+
+        return text
     
     def _build_major_position(self, position):
         text = td(
@@ -212,7 +230,7 @@ class JakesDefaultWithSkills(LatexTemplate):
                 doc += self.build_major_section(section["name"], section["items"])
             else:
                 doc += self.build_minor_section(section["name"], section["items"])
-        doc += self.build_education(resume["info"])
+        doc += self.build_education_section(resume["info"])
 
         doc += r"\end{document}"
 

@@ -14,8 +14,8 @@ class LatexTemplate(ABC):
     def build_skills(self, info):
         return self._build_skills(info)
     
-    def build_education(self, info):
-        return self._build_education(info)
+    def build_education_section(self, info):
+        return self._build_education_section(info)
     
     def build_major_section(self, name, info):
         return self._build_major_section(name, info)
@@ -39,7 +39,11 @@ class LatexTemplate(ABC):
         pass
 
     @abstractmethod
-    def _build_education(self, info):
+    def _build_education_section(self, info):
+        pass
+
+    @abstractmethod
+    def _build_education_entry(self, info):
         pass
 
     @abstractmethod
