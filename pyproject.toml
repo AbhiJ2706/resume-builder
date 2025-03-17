@@ -37,6 +37,13 @@ dependencies = [
     "google-auth-httplib2",
     "google-auth-oauthlib",
     "keybert",
+    "boto3",
+    "fastapi",
+    "reportlab",
+    "validator-collection",
+    "python-dotenv",
+    "pydantic",
+    "fastapi[standard]"
 ]
 
 [project.urls]
