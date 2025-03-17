@@ -73,7 +73,7 @@ class WorkdayDefault(LatexTemplate):
     def _build_education_section(self, info):
         text = td(
             fr"""
-            \section{{\blue{{Education}}}}
+            \section{{Education}}
                 \resumeSubHeadingListStart
             """
         )
