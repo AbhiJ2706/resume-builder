@@ -1,14 +1,11 @@
 from botocore.exceptions import ClientError
 from dotenv import load_dotenv
-from fastapi import FastAPI, Response
-from pydantic import BaseModel
 from validator_collection import validators
 
 import boto3
 
 from importlib import import_module
 
-import io
 import json
 import os
 import subprocess
@@ -49,16 +46,6 @@ DOMAIN_TO_TEMPLATE = {
 }
 
 
-APP = FastAPI()
-
-
-class GenerationRequest(BaseModel):
-    user_id: str
-    link: str
-    theme: str
-    desc: str
-
-
 def to_camel_case(snake_str):
     return "".join(x.capitalize() for x in snake_str.lower().split("_"))
 
@@ -96,19 +83,3 @@ def run_pipeline(user_id, link, theme, posting):
     os.rename('artifacts/final_doc.pdf', f"output/{resume_data['info']['firstname']}_{resume_data['info']['lastname']}_resume.pdf")
 
     return f"output/{resume_data['info']['firstname']}_{resume_data['info']['lastname']}_resume.pdf"
-
-
-@APP.get("/")
-def ping():
-    return {"Hello": "World"}
-
-
-@APP.get("/generate")
-def generate(params: GenerationRequest):
-    
-    file = run_pipeline(params.user_id, params.link, params.theme, params.desc)
-
-    if file:
-        with open(file, "rb") as fh:
-            f = io.BytesIO(fh.read())
-            return Response(f, media_type="application/pdf")
