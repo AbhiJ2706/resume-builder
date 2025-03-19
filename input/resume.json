@@ -25,7 +25,8 @@
         }],
         "core_skill_label": "Languages",
         "extra_skill_label": "Technologies",
-        "domain_label": "Domains"
+        "domain_label": "Domains",
+        "default_template": "figtree"
     },
     "sections": [
         {
