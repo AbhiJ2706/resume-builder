@@ -38,13 +38,17 @@ class Figtree(LatexTemplate):
         core_skills = self.truncate(info['core_skills'], fmt=lambda x: ', '.join(x) + '.')
         extra_skills = self.truncate(info['extra_skills'], fmt=lambda x: ', '.join(x) + '.')
         domains = self.truncate(info['domains'], fmt=lambda x: ', '.join(x) + '.')
+        if len(info['extra_skills']):
+            extra_skills_fmt = fr"\textbf{{{info['extra_skill_label']}}}{{: {', '.join(extra_skills) + '.'}}} \\"
+        else:
+            extra_skills_fmt = fr""
         return td(
             fr"""
             \begin{{itemize}}[leftmargin=0.15in, label={{}}]
                 \small{{\item{{
                     \textbf{{{info['core_skill_label']}}}{{: {', '.join(core_skills) + '.'}}} \\
-                    \textbf{{{info['extra_skill_label']}}}{{: {', '.join(extra_skills) + '.'}}} \\
-                    \textbf{{{info['domain_label']}}}{{: {', '.join(domains) + '.'}}} \\
+                    {extra_skills_fmt}
+                    \textbf{{{info.get('domain_label', 'Areas of focus')}}}{{: {', '.join(domains) + '.'}}} \\
                 }}}}
             \end{{itemize}}
             """
@@ -57,13 +61,13 @@ class Figtree(LatexTemplate):
                         \resumeItem{{Relevant Coursework: {info['relevant_coursework']}.}}
                     \resumeItemListEnd
                     """
-        ).replace("%", "\\%").replace("$", "\\$") if info['relevant_coursework'] != "" else ""
+        ).replace("%", "\\%").replace("$", "\\$").replace("&", "and") if info['relevant_coursework'] != "" else ""
 
         return td(
             fr"""
                 \resumeSubheading
                 {{{info['institution']}}}{{{info['institution_location']}}}
-                {{{info['degree_name']}}}{{{self.resolve_date(info['start'], info['end'])}{degree_finished}}}
+                {{{info['degree_name'].replace('&', 'and')}}}{{{self.resolve_date(info['start'], info['end'])}{degree_finished}}}
                 {relevant_coursework}
                 \vspace{{3pt}}
             """

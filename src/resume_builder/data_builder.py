@@ -114,8 +114,9 @@ def build_resume(posting, resume):
     new_resume["sections"] = []
 
     for section in resume["sections"]:
+
         new_section, temp_core_skills, temp_extra_skills = \
-            build_section(posting, section["items"], include=section["include"], k=section["num_top_points"])
+            build_section(posting, section["items"], include=None if section["include"] else 2, k=section.get("num_top_points", 3))
         new_resume["sections"].append({
             "name": section["name"],
             "items": new_section

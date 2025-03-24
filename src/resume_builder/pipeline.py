@@ -1,3 +1,4 @@
+from datetime import datetime
 from urllib.parse import urlparse
 from botocore.exceptions import ClientError
 from dotenv import load_dotenv
@@ -29,6 +30,50 @@ def to_camel_case(snake_str):
     return "".join(x.capitalize() for x in snake_str.lower().split("_"))
 
 
+def date_to_string(date: datetime.date):
+    return [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ][date.month - 1] + f" {str(date.year)}"
+
+
+def to_valid_format(data):
+    def sort_section(sect):
+        for i in range(len(data[sect])):
+            data[sect][i]["start"] = datetime.strptime(data[sect][i]["start"], "%Y-%m-%dT%H:%M:%S.%fZ").date()
+            data[sect][i]["end"] = datetime.strptime(data[sect][i]["end"], "%Y-%m-%dT%H:%M:%S.%fZ").date()
+        data[sect] = sorted(data[sect], key=lambda x: x["end"], reverse=True)
+        for i in range(len(data[sect])):
+            data[sect][i]["start"] = date_to_string(data[sect][i]["start"])
+            data[sect][i]["end"] = date_to_string(data[sect][i]["end"])
+        
+    sort_section("education")
+    sort_section("extracurriculars")
+    sort_section("experience")
+    sort_section("projects")
+    sort_section("research")
+
+    data["info"] = data["user_resume_information"]
+    data["info"]["education"] = data["education"]
+    new_sections = []
+    for k, v in data["sections"].items():
+        data["sections"][k]["items"] = data[data["sections"][k]["name"]]
+        new_sections.append(data["sections"][k])
+    data["sections"] = new_sections
+    
+    return data
+
+
 def run_pipeline(user_id, link, posting):
     print(user_id)
     print(link)
@@ -38,8 +83,11 @@ def run_pipeline(user_id, link, posting):
 
     print(domain)
 
-    with open("../resume-builder-frontend/1_final.json") as f:
-        resume_data = json.loads(f.read())
+    with open("../resume-builder-frontend/tailor-frontend/src/1_intermediate.json") as f:
+        resume_data = to_valid_format(json.loads(f.read()))
+    
+    with open("artifacts/1_intermediate.json", "w+") as f:
+        f.write(json.dumps(resume_data, indent=4))
     
     template = domain_to_template(domain, resume_data['info']['default_template'])
 

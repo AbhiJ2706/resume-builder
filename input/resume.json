@@ -31,7 +31,7 @@
     "sections": [
         {
             "name": "experience",
-            "include": null,
+            "include": true,
             "num_top_points": 3,
             "items": [
                 {
@@ -333,7 +333,7 @@
             ]
         }, {
             "name": "extracurriculars",
-            "include": 2,
+            "include": false,
             "num_top_points": 2,
             "items": [
                 {
