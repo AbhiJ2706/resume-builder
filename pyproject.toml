@@ -73,7 +73,7 @@ cov = [
   "test-cov",
   "cov-report",
 ]
-gdoc = "./gdoc_pipeline.sh {args:tests}"
+server-dev = "fastapi dev src/resume_builder/main.py"
 latex = "./latex_pipeline.sh {args:tests}"
 
 [[tool.hatch.envs.all.matrix]]
