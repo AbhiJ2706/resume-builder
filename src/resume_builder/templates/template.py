@@ -14,17 +14,21 @@ class LatexTemplate(ABC):
     def build_skills(self, info):
         return self._build_skills(info)
     
-    def build_education(self, info):
-        return self._build_education(info)
+    def build_education_section(self, info):
+        return self._build_education_section(info)
     
-    def build_experiences(self, experiences):
-        return self._build_experiences(experiences)
+    def build_major_section(self, name, info):
+        return self._build_major_section(name, info)
     
-    def build_extracurriculars(self, extracurriculars):
-        return self._build_extracurriculars(extracurriculars)
+    def build_minor_section(self, name, info):
+        return self._build_minor_section(name, info)
+    
+    def get_major_sections(self):
+        return ["experience"]
+    
+    def resolve_date(self, start, end):
+        return start if start == end else f"{start} - {end}"
 
-    def build_projects(self, project):
-        return self._build_projects(project)
 
     @abstractmethod
     def _build_header(self, info):
@@ -35,46 +39,52 @@ class LatexTemplate(ABC):
         pass
 
     @abstractmethod
-    def _build_education(self, info):
+    def _build_education_section(self, info):
         pass
 
     @abstractmethod
-    def _build_experiences(self, experiences):
+    def _build_education_entry(self, info):
+        pass
+
+    @abstractmethod
+    def _build_major_section(self, name, info):
         pass
     
     @abstractmethod
-    def _build_extracurriculars(self, extracurriculars):
+    def _build_minor_section(self, name, info):
         pass
 
     @abstractmethod
-    def _build_projects(self, projects):
+    def _build_major_position(self, position):
         pass
 
     @abstractmethod
-    def _build_experience_position(self, position):
-        pass
-
-    @abstractmethod
-    def _build_extracurricular_position(self, position):
-        pass
-
-    @abstractmethod
-    def _build_project_entry(self, project):
+    def _build_minor_position(self, position):
         pass
     
     @abstractmethod
-    def _build_doc(self, preamble, resume):
+    def _build_doc(self, resume):
         pass
 
-    # @property
-    # @abstractmethod
-    # def font_name(self):
-    #     pass
+    @property
+    @abstractmethod
+    def font_name(self):
+        pass
 
-    # @property
-    # @abstractmethod
-    # def font_path(self):
-    #     pass
+    @property
+    @abstractmethod
+    def font_path(self):
+        pass
+
+    @property
+    @abstractmethod
+    def font_size(self):
+        pass
+
+    @property
+    @abstractmethod
+    def margin(self):
+        pass
 
     @property
     @abstractmethod
@@ -96,7 +106,7 @@ class LatexTemplate(ABC):
                 open("artifacts/render.sh", "w+") as render_script:
             
             resume_json = json.loads(resume.read())
-            doc = self._build_doc(self.preamble, resume_json)
+            doc = self._build_doc(resume_json)
             final_doc.write(doc)
             render_script.write(self.render_script)
         
@@ -104,11 +114,16 @@ class LatexTemplate(ABC):
             "artifacts/render.sh", 
             0o777
         )
+
+    def truncate(self, l, fmt=lambda x: ' '.join(x)):
+        while self.get_text_width(fmt(l)) > 8.5:
+            del l[-1]
+        return l
     
     def get_text_width(self, text):
         pdfmetrics.registerFont(TTFont(self.font_name, self.font_path))
-        return pdfmetrics.stringWidth(text, self.font_name, self.font_path)
+        return self.__points_to_inches(pdfmetrics.stringWidth(text, self.font_name, self.font_size)) + self.margin
 
-    def points_to_inches(self, points):
+    def __points_to_inches(self, points):
         return points / 72.0
 

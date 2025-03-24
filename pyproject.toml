@@ -37,7 +37,13 @@ dependencies = [
     "google-auth-httplib2",
     "google-auth-oauthlib",
     "keybert",
-    "reportlab"
+    "boto3",
+    "fastapi",
+    "reportlab",
+    "validator-collection",
+    "python-dotenv",
+    "pydantic",
+    "fastapi[standard]"
 ]
 
 [project.urls]
@@ -67,7 +73,7 @@ cov = [
   "test-cov",
   "cov-report",
 ]
-gdoc = "./gdoc_pipeline.sh {args:tests}"
+server-dev = "fastapi dev src/resume_builder/main.py"
 latex = "./latex_pipeline.sh {args:tests}"
 
 [[tool.hatch.envs.all.matrix]]

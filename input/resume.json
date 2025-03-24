@@ -13,399 +13,446 @@
             "Embedded Software", 
             "Test Automation", 
             "AI/ML Research"
-        ] 
+        ],
+        "education": [{
+            "degree_name": "Bachelor of Computer Science with AI Specialization (Honors, Co-op)",
+            "start": "Sep 2020",
+            "end": "May 2025",
+            "completed": false,
+            "institution": "University of Waterloo",
+            "institution_location": "Waterloo, ON",
+            "relevant_coursework": ""
+        }],
+        "core_skill_label": "Languages",
+        "extra_skill_label": "Technologies",
+        "domain_label": "Domains",
+        "default_template": "figtree"
     },
-    "experience": [
+    "sections": [
         {
-            "company": "University of Waterloo",
-            "location": "Waterloo, ON",
-            "position": "Undergraduate Research Assistant",
-            "domain": "AI/ML Research",
-            "duration": "January 2025 - Present",
-            "languages": [
-                "Python"
-            ],
-            "frameworks": [
-                "TensorFlow", 
-                "PyTorch"
-            ],
-            "description": [
+            "name": "experience",
+            "include": true,
+            "num_top_points": 3,
+            "items": [
                 {
-                    "summary": "Implementing a system to detect cryptocurrency pump-and-dump schemes using sentiment and price trend analysis.",
-                    "required_skills": [],
-					"group": 0
+                    "organization": "University of Waterloo",
+                    "location": "Waterloo, ON",
+                    "position": "Undergraduate Research Assistant",
+                    "domain": "AI/ML Research",
+                    "start": "January 2025",
+                    "end": "Present",
+                    "core_skills": [
+                        "Python"
+                    ],
+                    "extra_skills": [
+                        "TensorFlow", 
+                        "PyTorch"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Implementing a system to detect cryptocurrency pump-and-dump schemes using sentiment and price trend analysis.",
+                            "required_skills": [],
+                            "group": 0
+                        }
+                    ]
+                },
+                {
+                    "organization": "BetterUp",
+                    "location": "San Francisco, CA",
+                    "position": "Machine Learning Engineering Intern",
+                    "domain": "ML Engineering",
+                    "start": "September 2024",
+                    "end": "December 2024",
+                    "core_skills": [
+                        "Python",
+                        "Terraform",
+                        "SQL"
+                    ],
+                    "extra_skills": [
+                        "Kubernetes",
+                        "Datadog",
+                        "Snowflake",
+                        "AWS",
+                        "Docker",
+                        "Scikit-learn",
+                        "NumPy",
+                        "Pandas",
+                        "TensorFlow",
+                        "FastAPI"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Led the development of a deep learning-based transcript analysis app, delivering 20+ user insights to BetterUp's partners.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Extracted conversation insights from coaching session transcripts, enabling platform-wide quality analysis for 1M+ sessions.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Developed a model to group users by job title, improving progress insights and personalized experience for 1M+ users.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Streamlined and secured data processing pipelines. Automated essential data monitoring tasks, saving engineers 1000+ hours.",
+                            "required_skills": ["Terraform"],
+                            "group": 0
+                        }
+                    ]
+                },
+                {
+                    "organization": "Amazon",
+                    "location": "Toronto, ON",
+                    "position": "Software Development Engineering Intern",
+                    "domain": "Software Engineering",
+                    "start": "May 2024",
+                    "end": "August 2024",
+                    "core_skills": [
+                        "Kotlin",
+                        "Typescript",
+                        "Java",
+                        "Javascript"
+                    ],
+                    "extra_skills": [
+                        "GraphQL",
+                        "AWS",
+                        "React.js"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Designed an LLM-based assistant to convert natural language to database queries, speeding up data retrieval times by 10x.",
+                            "required_skills": ["Kotlin", "Typescript", "AWS"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Created an app to send advertiser leads to sales managers through Slack, improving delivery of leads for 1000+ employees.",
+                            "required_skills": ["Kotlin", "Typescript", "AWS"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Refactored backend components of Amazon's lead retrieval platform, decreasing development time for new services by 30%.",
+                            "required_skills": ["Kotlin", "Typescript"],
+                            "group": 0
+                        }
+                    ]
+                },
+                {
+                    "organization": "University of Waterloo",
+                    "location": "Waterloo, ON",
+                    "position": "Undergraduate Research Assistant",
+                    "domain": "AI/ML Research",
+                    "start": "January 2024",
+                    "end": "April 2024",
+                    "core_skills": [
+                        "Swift"
+                    ],
+                    "extra_skills": [
+                        "CoreML"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Implemented an LLM test bench. Evaluated 10+ LLMs in a pipeline for unsupervised topic modelling of social media posts.",
+                            "required_skills": [],
+                            "group": 0
+                        }
+                    ]
+                },
+                {
+                    "organization": "Qualcomm",
+                    "location": "Toronto, ON",
+                    "position": "AI Performance Analysis Intern",
+                    "domain": "Data Engineering",
+                    "start": "August 2023",
+                    "end": "December 2023",
+                    "core_skills": [
+                        "Python",
+                        "Bash"
+                    ],
+                    "extra_skills": [
+                        "NumPy",
+                        "Pandas",
+                        "Docker",
+                        "Jenkins"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Led the development of a software profiling pipeline, enabling tracing and analysis of CNN performance on Snapdragon.",
+                            "required_skills": ["Python", "Bash"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Increased the efficiency and speed of CNN performance analysis tools and preprocessing for large traces by 500+%.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Designed a querying system and cache for large performance datasets, enabling local analysis of datasets with 50k+ points.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Designed and implemented a time-based search engine to enable nanosecond-level analysis of on-device CNN execution.",
+                            "required_skills": ["Python", "NumPy", "Pandas"],
+                            "group": 0
+                        }
+                    ]
+                },
+                {
+                    "organization": "Qualcomm",
+                    "location": "Toronto, ON",
+                    "position": "Embedded Software Development Intern",
+                    "domain": "Embedded Software",
+                    "start": "January 2023",
+                    "end": "August 2023",
+                    "core_skills": [
+                        "C",
+                        "C++",
+                        "Python",
+                        "Bash"
+                    ],
+                    "extra_skills": [
+                        "Android",
+                        "Jenkins",
+                        "Linux",
+                        "Docker"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Added runtime configuration for embedded debugging infrastructure, improving debugging experience for 40+ engineers.",
+                            "required_skills": ["C++"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Created and deployed an Extract-Load-Transform (ELT) pipeline to analyze processor performance on AI-based workloads.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Integrated embedded data transmission features into production code, wrote tests to evaluate thread-safety and scalability.",
+                            "required_skills": ["C++", "Android"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Used a data-driven approach to accelerate Inter-Process Communication (IPC) for ML-based image processing by 50%.",
+                            "required_skills": ["C++", "Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Implemented infrastructure to collect performance measurements for 5+ embedded ML-based image processing pipelines.",
+                            "required_skills": ["C++"],
+                            "group": 0
+                        }
+                    ]
+                },
+                {
+                    "organization": "Cisco Systems",
+                    "location": "Ottawa, ON",
+                    "position": "DevOps and Analytics Intern",
+                    "domain": "Software Engineering",
+                    "start": "May 2022",
+                    "end": "August 2022",
+                    "core_skills": [
+                        "Python"
+                    ],
+                    "extra_skills": [
+                        "ElasticSearch",
+                        "NumPy",
+                        "Linux",
+                        "Docker",
+                        "Pandas"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Implemented, tested, and deployed a recommendation system to match code reviewers to pull requests, serving 3600+ users.",
+                            "required_skills": ["Python", "Scikit-learn", "NumPy", "Pandas"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Optimized Natural Language Understanding (NLU) pipelines for customer service chatbots, increasing accuracy to 99%.",
+                            "required_skills": ["Docker"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Performed Docker image optimizations to reduce Cisco's service chatbot memory use by 90+%, saving $35,000+/year.",
+                            "required_skills": ["Docker"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Created RESTful APIs to convert chatbot responses to HTML and JSON, accelerating chatbot UI/UX development by 2x.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        }
+                    ]
+                },
+                {
+                    "organization": "Cisco Systems",
+                    "location": "Ottawa, ON",
+                    "position": "Software Engineering Intern",
+                    "domain": "Test Automation",
+                    "start": "May 2021",
+                    "end": "August 2021",
+                    "core_skills": [
+                        "Python",
+                        "SQL"
+                    ],
+                    "extra_skills": [
+                        "TensorFlow",
+                        "InfluxDB",
+                        "NumPy",
+                        "Linux",
+                        "Grafana",
+                        "Pandas",
+                        "Scikit-learn"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Developed a Recurrent Neural Network (RNN)-based model to detect and report anomalies in router telemetry data.",
+                            "required_skills": ["Python", "TensorFlow"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Wrote automated unit tests for 5+ SRv6 features, ensuring correctness and scalability across various network topologies.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Constructed RESTful APIs to collect and preprocess 60+ SRv6 telemetry metrics, improving automated testing capabilities.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Wrote scripts to automate the configuration of router topologies and simulations for test scenarios.",
+                            "required_skills": ["Python"],
+                            "group": 0
+                        }
+                    ]
                 }
             ]
-        },
-        {
-            "company": "BetterUp",
-            "location": "San Francisco, CA",
-            "position": "Machine Learning Engineering Intern",
-            "domain": "ML Engineering",
-            "duration": "September 2024 - December 2024",
-            "languages": [
-                "Python",
-                "Terraform",
-                "SQL"
-            ],
-            "frameworks": [
-                "Kubernetes",
-                "Datadog",
-                "Snowflake",
-                "AWS",
-                "Docker",
-                "Scikit-learn",
-                "NumPy",
-                "Pandas",
-                "TensorFlow",
-                "FastAPI"
-            ],
-            "description": [
+        }, {
+            "name": "extracurriculars",
+            "include": false,
+            "num_top_points": 2,
+            "items": [
                 {
-                    "summary": "Led the development of a deep learning-based transcript analysis app, delivering 20+ user insights to BetterUp's partners.",
-                    "required_skills": ["Python"],
-					"group": 0
+                    "organization": "University of Waterloo Bracket Bot Hackathon",
+                    "location": "Waterloo, ON",
+                    "start": "February 2025",
+                    "end": "February 2025",
+                    "core_skills": [
+                        "Python"
+                    ],
+                    "extra_skills": [
+                        "LLMs",
+                        "ROS"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Built a 2-wheeled robot. Developed a system to convert voice commands into driving and steering instructions for the robot.",
+                            "required_skills": [],
+                            "group": 0
+                        }
+                    ]
                 },
                 {
-                    "summary": "Extracted conversation insights from coaching session transcripts, enabling platform-wide quality analysis for 1M+ sessions.",
-                    "required_skills": ["Python"],
-					"group": 0
+                    "organization": "WAT.ai",
+                    "location": "Waterloo, ON",
+                    "start": "October 2023",
+                    "end": "April 2024",
+                    "core_skills": [
+                        "Python"
+                    ],
+                    "extra_skills": [
+                        "TensorFlow",
+                        "PyTorch",
+                        "OpenAI"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Designed a deep reinforcement learning model to trade stocks using sentiment analysis, price trends and technical indicators.",
+                            "required_skills": [],
+                            "group": 0
+                        }
+                    ]
                 },
                 {
-                    "summary": "Developed a model to group users by job title, improving progress insights and personalized experience for 1M+ users.",
-                    "required_skills": ["Python"],
-					"group": 0
+                    "organization": "Waterloo Data Science Club",
+                    "location": "Waterloo, ON",
+                    "start": "September 2022",
+                    "end": "September 2023",
+                    "core_skills": [
+                        "Python"
+                    ],
+                    "extra_skills": [
+                        "TensorFlow",
+                        "PyTorch",
+                        "LLMs"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Reading group lead: presented papers on neural networks, image processing, and NLP to 100+ club members.",
+                            "required_skills": [],
+                            "group": 0
+                        },
+                        {
+                            "summary": "VP of Data analysis: hosted workshops on ML and AI basics, led a team of 5 analysts producing educational content.",
+                            "required_skills": [],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Prepared resources and hosted workshops on Pandas, Numpy, MatPlotLib, and Tensorflow for 100+ members.",
+                            "required_skills": [],
+                            "group": 0
+                        },
+                        {
+                            "summary": "Fine-tuned a distillBERT LLM to retrieve 10+ metrics from climate disclosure extracts, for Manifest Climate.",
+                            "required_skills": [],
+                            "group": 0
+                        }
+                    ]
                 },
                 {
-                    "summary": "Streamlined and secured data processing pipelines. Automated essential data monitoring tasks, saving engineers 1000+ hours.",
-                    "required_skills": ["Terraform"],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "company": "Amazon",
-            "location": "Toronto, ON",
-            "position": "Software Development Engineering Intern",
-            "domain": "Software Engineering",
-            "duration": "May 2024 - August 2024",
-            "languages": [
-                "Kotlin",
-                "Typescript",
-                "Java",
-                "Javascript"
-            ],
-            "frameworks": [
-                "GraphQL",
-                "AWS",
-                "React.js"
-            ],
-            "description": [
-                {
-                    "summary": "Designed an LLM-based assistant to convert natural language to database queries, speeding up data retrieval times by 10x.",
-                    "required_skills": ["Kotlin", "Typescript", "AWS"],
-					"group": 0
+                    "organization": "TOHacks Executive Team",
+                    "location": "Toronto, ON",
+                    "start": "July 2021",
+                    "end": "January 2023",
+                    "core_skills": [
+                        "Javascript"
+                    ],
+                    "extra_skills": [
+                        "React.js",
+                        "Next.js"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Developed the TOHacks landing page using React.js. Built frontend website features used by 10,000+ visitors.",
+                            "required_skills": [],
+                            "group": 0
+                        }
+                    ]
                 },
                 {
-                    "summary": "Created an app to send advertiser leads to sales managers through Slack, improving delivery of leads for 1000+ employees.",
-                    "required_skills": ["Kotlin", "Typescript", "AWS"],
-					"group": 0
-                },
-                {
-                    "summary": "Refactored backend components of Amazon's lead retrieval platform, decreasing development time for new services by 30%.",
-                    "required_skills": ["Kotlin", "Typescript"],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "company": "University of Waterloo",
-            "location": "Waterloo, ON",
-            "position": "Undergraduate Research Assistant",
-            "domain": "AI/ML Research",
-            "duration": "January 2024 - April 2024",
-            "languages": [
-                "Swift"
-            ],
-            "frameworks": [
-                "CoreML"
-            ],
-            "description": [
-                {
-                    "summary": "Implemented an LLM test bench. Evaluated 10+ LLMs in a pipeline for unsupervised topic modelling of social media posts.",
-                    "required_skills": [],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "company": "Qualcomm",
-            "location": "Toronto, ON",
-            "position": "AI Performance Analysis Intern",
-            "domain": "Data Engineering",
-            "duration": "August 2023 - December 2023",
-            "languages": [
-                "Python",
-                "Bash"
-            ],
-            "frameworks": [
-                "NumPy",
-                "Pandas",
-                "Docker",
-                "Jenkins"
-            ],
-            "description": [
-                {
-                    "summary": "Led the development of a software profiling pipeline, enabling tracing and analysis of CNN performance on Snapdragon.",
-                    "required_skills": ["Python", "Bash"],
-					"group": 0
-                },
-                {
-                    "summary": "Increased the efficiency and speed of CNN performance analysis tools and preprocessing for large traces by 500+%.",
-                    "required_skills": ["Python"],
-					"group": 0
-                },
-                {
-                    "summary": "Designed a querying system and cache for large performance datasets, enabling local analysis of datasets with 50k+ points.",
-                    "required_skills": ["Python"],
-					"group": 0
-                },
-                {
-                    "summary": "Designed and implemented a time-based search engine to enable nanosecond-level analysis of on-device CNN execution.",
-                    "required_skills": ["Python", "NumPy", "Pandas"],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "company": "Qualcomm",
-            "location": "Toronto, ON",
-            "position": "Embedded Software Development Intern",
-            "domain": "Embedded Software",
-            "duration": "January 2023 - August 2023",
-            "languages": [
-                "C",
-                "C++",
-                "Python",
-                "Bash"
-            ],
-            "frameworks": [
-                "Android",
-                "Jenkins",
-                "Linux",
-                "Docker"
-            ],
-            "description": [
-                {
-                    "summary": "Added runtime configuration for embedded debugging infrastructure, improving debugging experience for 40+ engineers.",
-                    "required_skills": ["C++"],
-					"group": 0
-                },
-                {
-                    "summary": "Created and deployed an Extract-Load-Transform (ELT) pipeline to analyze processor performance on AI-based workloads.",
-                    "required_skills": ["Python"],
-					"group": 0
-                },
-                {
-                    "summary": "Integrated embedded data transmission features into production code, wrote tests to evaluate thread-safety and scalability.",
-                    "required_skills": ["C++", "Android"],
-					"group": 0
-                },
-                {
-                    "summary": "Used a data-driven approach to accelerate Inter-Process Communication (IPC) for ML-based image processing by 50%.",
-                    "required_skills": ["C++", "Python"],
-					"group": 0
-                },
-                {
-                    "summary": "Implemented infrastructure to collect performance measurements for 5+ embedded ML-based image processing pipelines.",
-                    "required_skills": ["C++"],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "company": "Cisco Systems",
-            "location": "Ottawa, ON",
-            "position": "DevOps and Analytics Intern",
-            "domain": "Software Engineering",
-            "duration": "May 2022 - August 2022",
-            "languages": [
-                "Python"
-            ],
-            "frameworks": [
-                "ElasticSearch",
-                "NumPy",
-                "Linux",
-                "Docker",
-                "Pandas"
-            ],
-            "description": [
-                {
-                    "summary": "Implemented, tested, and deployed a recommendation system to match code reviewers to pull requests, serving 3600+ users.",
-                    "required_skills": ["Python", "Scikit-learn", "NumPy", "Pandas"],
-					"group": 0
-                },
-                {
-                    "summary": "Optimized Natural Language Understanding (NLU) pipelines for customer service chatbots, increasing accuracy to 99%.",
-                    "required_skills": ["Docker"],
-					"group": 0
-                },
-                {
-                    "summary": "Performed Docker image optimizations to reduce Cisco's service chatbot memory use by 90+%, saving $35,000+/year.",
-                    "required_skills": ["Docker"],
-					"group": 0
-                },
-                {
-                    "summary": "Created RESTful APIs to convert chatbot responses to HTML and JSON, accelerating chatbot UI/UX development by 2x.",
-                    "required_skills": ["Python"],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "company": "Cisco Systems",
-            "location": "Ottawa, ON",
-            "position": "Software Engineering Intern",
-            "domain": "Test Automation",
-            "duration": "May 2021 - August 2021",
-            "languages": [
-                "Python",
-                "SQL"
-            ],
-            "frameworks": [
-                "TensorFlow",
-                "InfluxDB",
-                "NumPy",
-                "Linux",
-                "Grafana",
-                "Pandas",
-                "Scikit-learn"
-            ],
-            "description": [
-                {
-                    "summary": "Developed a Recurrent Neural Network (RNN)-based model to detect and report anomalies in router telemetry data.",
-                    "required_skills": ["Python", "TensorFlow"],
-					"group": 0
-                },
-                {
-                    "summary": "Wrote automated unit tests for 5+ SRv6 features, ensuring correctness and scalability across various network topologies.",
-                    "required_skills": ["Python"],
-					"group": 0
-                },
-                {
-                    "summary": "Constructed RESTful APIs to collect and preprocess 60+ SRv6 telemetry metrics, improving automated testing capabilities.",
-                    "required_skills": ["Python"],
-					"group": 0
-                },
-                {
-                    "summary": "Wrote scripts to automate the configuration of router topologies and simulations for test scenarios.",
-                    "required_skills": ["Python"],
-					"group": 0
-                }
-            ]
-        }
-    ],
-    "extracurriculars": [
-        {
-            "organization": "University of Waterloo Bracket Bot Hackathon",
-            "location": "Waterloo, ON",
-            "duration": "Feb 2025",
-            "technologies": [
-                "Python",
-                "LLMs",
-                "ROS"
-            ],
-            "description": [
-                {
-                    "summary": "Built a 2-wheeled robot. Developed a system to convert voice commands into driving and steering instructions for the robot.",
-                    "required_skills": [],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "organization": "WAT.ai",
-            "location": "Waterloo, ON",
-            "duration": "October 2023 - April 2024",
-            "technologies": [
-                "Python",
-                "TensorFlow",
-                "PyTorch",
-                "OpenAI"
-            ],
-            "description": [
-                {
-                    "summary": "Designed a deep reinforcement learning model to trade stocks using sentiment analysis, price trends and technical indicators.",
-                    "required_skills": [],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "organization": "Waterloo Data Science Club",
-            "location": "Waterloo, ON",
-            "duration": "September 2022 - September 2023",
-            "technologies": [
-                "Python",
-                "TensorFlow",
-                "PyTorch",
-                "LLMs"
-            ],
-            "description": [
-                {
-                    "summary": "Reading group lead: presented papers on neural networks, image processing, and NLP to 100+ club members.",
-                    "required_skills": [],
-					"group": 0
-                },
-                {
-                    "summary": "VP of Data analysis: hosted workshops on ML and AI basics, led a team of 5 analysts producing educational content.",
-                    "required_skills": [],
-					"group": 0
-                },
-                {
-                    "summary": "Prepared resources and hosted workshops on Pandas, Numpy, MatPlotLib, and Tensorflow for 100+ members.",
-                    "required_skills": [],
-					"group": 0
-                },
-                {
-                    "summary": "Fine-tuned a distillBERT LLM to retrieve 10+ metrics from climate disclosure extracts, for Manifest Climate.",
-                    "required_skills": [],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "organization": "TOHacks Executive Team",
-            "location": "Toronto, ON",
-            "duration": "July 2021 - January 2023",
-            "technologies": [
-                "Javascript",
-                "React.js",
-                "Next.js"
-            ],
-            "description": [
-                {
-                    "summary": "Developed the TOHacks landing page using React.js. Built frontend website features used by 10,000+ visitors.",
-                    "required_skills": [],
-					"group": 0
-                }
-            ]
-        },
-        {
-            "organization": "EngHack 2021 (Winning Entry)",
-            "location": "Waterloo, ON",
-            "duration": "July 2021",
-            "technologies": [
-                "Javascript",
-                "React.js",
-                "Node.js",
-                "Mongoose"
-            ],
-            "description": [
-                {
-                    "summary": "Developed a full-stack app designed to teach financial practices to kids, in under 36 hours.",
-                    "required_skills": [],
-					"group": 0
+                    "organization": "EngHack 2021 (Winning Entry)",
+                    "location": "Waterloo, ON",
+                    "start": "July 2021",
+                    "end": "July 2021",
+                    "core_skills": [
+                        "Javascript"
+                    ],
+                    "extra_skills": [
+                        "React.js",
+                        "Node.js",
+                        "Mongoose"
+                    ],
+                    "description": [
+                        {
+                            "summary": "Developed a full-stack app designed to teach financial practices to kids, in under 36 hours.",
+                            "required_skills": [],
+                            "group": 0
+                        }
+                    ]
                 }
             ]
         }
